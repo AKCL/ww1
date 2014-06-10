@@ -3,6 +3,22 @@
 @full-width: 95%;
 @header-bg: pink;
 
+// links
+@link-color: white;
+
+// font styles
+@font-body-color: white;
+@font-base-size: 1em;
+
+
+
+// gallery
+@gal-height: 600px;
+@gal-width: 600px;
+
+//fonts
+
+
 /*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
 
 html,
@@ -10,12 +26,12 @@ button,
 input,
 select,
 textarea {
-    color: #222;
+    color: @font-body-color;
 }
 
 html {
-    font-size: 1em;
-    line-height: 1.4;
+    font-size: @font-base-size;
+    line-height: @font-base-size*1.5;
 }
 
 ::-moz-selection {
@@ -33,13 +49,12 @@ hr {
     height: 1px;
     border: 0;
     border-top: 1px solid #ccc;
-    margin: 1em 0;
+    margin: @font-base-size 0;
     padding: 0;
 }
 
 audio,
 canvas,
-img,
 video {
     vertical-align: middle;
 }
@@ -76,6 +91,7 @@ h2{
 
 body {
     font: 16px/26px Helvetica, Helvetica Neue, Arial;
+    background-color: rgb(0,0,0);
 }
 
 .wrapper {
@@ -192,6 +208,256 @@ nav a:hover {
     display: block;
     position: fixed;
 }
+
+/* ==========================================================================
+Gallery
+   ========================================================================== */
+
+// structure
+.gallery{
+
+    width: 980px;
+    margin: 0 auto;
+}
+.navigation-container{
+    width: 330px;
+    margin:0;
+    float: left;
+    display: block;
+}
+
+.case-nav{
+    position: fixed;
+    left: 0;
+    border: 1px solid white;
+        ul{
+            
+
+            li{
+                padding: 10px;
+            }
+        } 
+
+}
+
+// if using scroll box for thumbs
+
+// .navigation {
+//     a.prev {
+//         background-image: url(prevPageArrowWhite.gif);
+//     }
+//     a.next {
+//         background-image: url(nextPageArrowWhite.gif);
+//     } 
+// }
+
+
+.content {
+    /* The display of content is enabled using jQuery so that the slideshow content won't display unless javascript is enabled. */
+    display: none;
+    float: right;
+    width: @gal-width;
+
+    a:focus,  a:hover,  a:active {
+       text-decoration: underline;
+    }
+    a, .navigation a {
+        text-decoration: none;
+        color: @link-color;
+    }
+
+    .slideshow-container {
+        position: relative;
+        clear: both;
+        height: @gal-height; /* This should be set to be at least the height of the largest image in the slideshow */
+
+        .controls {
+
+            a {
+                size: @font-base-size;
+                display: inline-block;
+            }
+
+            .ss-controls {
+                float: left;
+                display: none;
+            }
+            .nav-controls {
+                float: right;
+            }
+        } // end of .controls
+
+
+        .loader {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-image: url('loaderwhite.gif');
+            background-repeat: no-repeat;
+            background-position: center;
+            width: @gal-width;
+            height: @gal-height; /* This should be set to be at least the height of the largest image in the slideshow */
+        }
+
+        .slideshow {
+
+            span.image-wrapper {
+                display: inline-block;
+                position: absolute;
+                top: @font-base-size*2;
+                left: 0;
+            }
+
+            a.advance-link {
+                display: inline-block;
+                width: @gal-width;
+                height: @gal-height; /* This should be set to be at least the height of the largest image in the slideshow */
+                line-height: @gal-height; /* This should be set to be at least the height of the largest image in the slideshow */
+                text-align: center;
+            }
+             a.advance-link:hover,  a.advance-link:active,  a.advance-link:visited {
+                text-decoration: none;
+            }
+
+            img {
+                border: 0 solid #ccc;
+                vertical-align: center;
+            }
+        } // end of .slideshow
+
+    } //end of .slideshow-container
+
+    .download {
+        float: right;
+    }
+
+    .caption-container {
+        position: relative;
+        clear: left;
+
+
+        .photo-index {
+            color: #888;
+            display: none; 
+        // have no idea where this is coming from
+        }
+
+        .image-caption {
+            display: block;
+            position: absolute;
+            width: @gal-width;
+            top: 0;
+            left: 0;
+        }
+
+        .caption {
+            padding-top: 1.5em;
+        }
+
+        .image-title {
+            font-weight: bold;
+            font-size: 2em;
+        }
+
+        .image-desc {
+            line-height: 1.5em;
+            padding-top: @font-base-size;
+        }
+
+    } // end of .caption-container
+    
+
+} // end of .content
+
+
+
+
+
+
+div.navigation {
+    /* The navigation style is set using jQuery so that the javascript specific styles won't be applied unless javascript is enabled. */
+}
+
+ul.thumbs {
+    clear: both;
+    margin: 0;
+    padding: 0;
+
+    li {
+        float: left;
+        padding: 0;
+        // margin: 5px 10px 5px 0;
+        list-style: none;
+    }
+
+    a.thumb {
+        padding: 0 1px 1px 0;
+        display: block;
+        //border: 1px solid white;
+    }
+
+    .selected a.thumb {
+        background: #000;
+        
+    }
+
+    a.thumb:focus {
+        outline: none;
+    }
+
+    img {
+        border: none;
+        display: block;
+        width: 100px;
+    }
+}
+
+
+
+.navigation {
+    div.top {
+        margin-bottom: 12px;
+        height: 11px;
+    }
+    div.navigation div.bottom {
+        margin-top: 12px;
+     }
+}
+
+
+
+.pagination {
+    clear: both;
+
+    a, .current, .ellipsis {
+        display: block;
+        float: left;
+        margin-right: 2px;
+        padding: 4px 7px 2px 7px;
+        border: 1px solid #ccc;
+    }
+    a:hover {
+        background-color: #eee;
+        text-decoration: none;
+    }
+   .current {
+        background-color: #000;
+        border-color: #000;
+        color: #fff;
+    }
+    .ellipsis {
+        border: none;
+        padding: 5px 0 3px 2px;
+    }
+
+    .pagination {
+
+ 
+}
+
+}
+
+
 
 
 /* ==========================================================================
@@ -404,8 +670,7 @@ nav a:hover {
         widows: 3;
     }
 
-    h2,
-    h3 {
+    h2,  h3 {
         page-break-after: avoid;
     }
 }

@@ -11,8 +11,6 @@ $.getJSON("timeline/events.js")
 	});
 });
 
-$.getJSON( "timeline/events.js", function( json ) {
-  console.log( "JSON Data: " + json.events[ 3 ].title );
- });
+
 
 
