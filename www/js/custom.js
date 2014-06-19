@@ -4,19 +4,17 @@ document.write('<style>.noscript { display: none; }</style>');
 jQuery(document).ready(function($) {
 
 $('.bg-image').backstretch("img/BritishArtists.Nash2.jpg");
-$('.copy').backstretch("img/old.pxaper.jpg");
+$('.copy').backstretch("img/old.paxper.jpg");
 
 
 function ig(){
 
+	var onMouseOutOpacity = 0.5;
+
 	// We only want these styles applied when javascript is enabled
 	$('div.content').css('display', 'block');
 
-	// Initially set opacity on thumbs and add
-	// additional styling for hover effect on thumbs
-	var onMouseOutOpacity = 0.5;
-
-	$('#thumbs ul.thumbs li, div.navigation a.pageLink').opacityrollover({
+	$('ul.thumbs li, .navigation a.pageLink').opacityrollover({
 	    mouseOutOpacity:   onMouseOutOpacity,
 	    mouseOverOpacity:  1.0,
 	    fadeSpeed:         'fast',
@@ -130,7 +128,8 @@ function ig(){
 	// });
 
 
-	} // end of ig()
+	} /////////////////////////////////// end of ig()//////////////////////////////////////
+
 
 	// http://rosspenman.com/pushstate-jquery/ more ...
 	
@@ -138,58 +137,64 @@ function ig(){
 	var popped = ('state' in window.history && window.history.state !== null),
 	initialUrl = location.pathname,
 	$ajaxDest = $('.thumbs'),
-	$galleryHeading = $('.gallery h2');
+	$galleryHeading = $('.gallery h2'),
+	$caseNav = $('case-nav a');
+
+	// initialise page
+	getContent("case1.html", "Case 1");
 
 
-	$(document).on("click", ".case-nav a", function(e) {	
+	if (Modernizr.history) {
 
+		$(document).on("click", ".case-nav a", function(e) {
 		
-		var title = $(this).html(),
-		ajaxSrc = $(this).attr("href"),
-		$caseNav = $('.case-nav a');
-		
-		if(history.pushState) {
-			history.pushState({'title':title}, title, ajaxSrc);
-		}
+			var title = $(this).html(),
+			ajaxSrc = $(this).attr("href");
 
-	
-		e.preventDefault();
+			e.preventDefault();
 
+			getContent(ajaxSrc, title);
 
-
-		getContent(ajaxSrc, title);
-
-
-		$caseNav.removeClass('selected');
-		$(this).parent().addClass('selected');
+		}); //  end case-nav ajax
 
 		//console.log(initialURL);
 
-	}); //  end case-nav ajax
+	} else {
 
+		// something else
+	}
 
 	
 	function getContent(ajaxSrc, title){
+
+		//if(history.pushState) {
+		history.pushState({caseTitle:title}, title, ajaxSrc)
+		//}
+		
 		$ajaxDest.load(ajaxSrc, function(){
-		  	ig();
+		  	ig();  	
 		  	$galleryHeading.html(title);
+
+
+			$('.case-nav a').removeClass('selected');
+			$(".case-nav a[href$='" + ajaxSrc + "']").addClass('selected');
+		  	//$selected.addClass('selected'); // update title
+
 		});
 	}
 
-	window.onpopstate = function(event) {
-		//alert("load the previous gallery");
+	$(window).bind("popstate", function() {
 
-		console.log("pathname: "+location.pathname);
-		console.log(initialUrl);
+		var title = (event.state.caseTitle),
+		link = location.pathname.replace(/^.*[\\/]/, ""); // get filename only
+
+		console.log("link = "+link);
 		
 		if (location.pathname != initialUrl){
-			getContent(location.pathname, "???? title"); /// get the title?? Could retrive from the ajaxed file ...
+			getContent(link, title);	
 		}
-		
-	};
 
-
-	
+	});
 
     /****************************************************************************************/
 });
