@@ -10,13 +10,17 @@
 @font-body-color: white;
 @font-base-size: 1em;
 
-
-
 // gallery
 @gal-height: 600px;
 @gal-width: 600px;
 
 //fonts
+
+//colors
+@dk-grey: #111;
+@mid-grey:#222;
+@lt-grey: #333;
+@white-grey:#555;
 
 
 /*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
@@ -99,6 +103,8 @@ body {
     margin: 0 5%;
 }
 
+
+
 /* ===================
     ALL: Orange Theme
    =================== */
@@ -108,7 +114,12 @@ body {
 .header-container,
 .footer-container,
 .main aside {
-    background: @header-bg;
+
+}
+
+.header-container{
+    height: 65px;
+    background-color: white;
 }
 
 .title {
@@ -122,29 +133,31 @@ body {
 nav ul {
     margin: 0;
     padding: 0;
+    a {
+        display: block;
+        margin-bottom: 10px;
+        padding: 0;
+
+        text-align: center;
+        text-decoration: none;
+        font-weight: bold;
+
+        color: white;
+        background: black;
+    }
+
+    a:hover,
+    a:visited {
+        color: white;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+
 }
 
-nav a {
-    display: block;
-    margin-bottom: 10px;
-    padding: 15px 0;
 
-    text-align: center;
-    text-decoration: none;
-    font-weight: bold;
-
-    color: white;
-    background: black;
-}
-
-nav a:hover,
-nav a:visited {
-    color: white;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
 
 /* ==============
     MOBILE: Main
@@ -226,21 +239,46 @@ Gallery
     display: block;
 }
 
+// case navigation //
+
 .case-nav{
-    position: fixed;
+    position: absolute;
+    z-index: 1000;
+    height: 1000px; // this needs to be set in js
+    width: 180px;
     left: 0;
-    border: 1px solid white;
+    top: 65px;
+    background-color: @dk-grey;
         ul{
+            width: 180px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
             
-
-            li{
+            li {
                 padding: 10px;
+                margin: 0;
+                cursor: pointer;
             }
-        }
 
-        a.selected {
-            background: red;
+            li.selected{
+                background-color: @lt-grey;
+            }
+            
+            li:hover{
+                background-color: @mid-grey;
+            }
+            li.selected a{
+                color: white;
+            }
+            li a, li:link a,  li:active, li:visited {
+                color: @white-grey;
+                text-decoration: none;
+            }
+
+
         } 
+   
 
 }
 
@@ -372,10 +410,6 @@ Gallery
     
 
 } // end of .content
-
-
-
-
 
 
 div.navigation {

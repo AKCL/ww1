@@ -91,108 +91,79 @@ function ig(){
 
 	/****************************************************************************************/
 
-	// /**** Functions to support integration of galleriffic with the jquery.history plugin ****/
-
-	// // PageLoad function
-	// // This function is called when:
-	// // 1. after calling $.historyInit();
-	// // 2. after calling $.historyLoad();
-	// // 3. after pushing "Go Back" button of a browser
-	// function pageload(hash) {
-	//     // alert("pageload: " + hash);
-	//     // hash doesn't contain the first # character.
-	//     if(hash) {
-	//         $.galleriffic.gotoImage(hash);
-	//     } else {
-	//         gallery.gotoIndex(0);
-	//     }
-	// }
-
-	// // Initialize history plugin.
-	// // The callback is called at once by present location.hash. 
-	// $.historyInit(pageload);
-
-	// // set onlick event for buttons using the jQuery 1.3 live method
-	// $("a[rel='history']").live('click', function(e) {
-	//     if (e.button != 0) return true;
-
-	//     var hash = this.href;
-	//     hash = hash.replace(/^.*#/, '');
-
-	//     // moves to a new page. 
-	//     // pageload is called at once. 
-	//     // hash don't contain "#", "?"
-	//     $.historyLoad(hash);
-
-	//     return false;
-	// });
-
-
 	} /////////////////////////////////// end of ig()//////////////////////////////////////
-
 
 	// http://rosspenman.com/pushstate-jquery/ more ...
 	
+	//window.location = "index.html"; // load in the
 
-	var popped = ('state' in window.history && window.history.state !== null),
-	initialUrl = location.pathname,
-	$ajaxDest = $('.thumbs'),
+	var initialUrl = location.pathname;
+	var $ajaxDest = $('.thumbs'),
 	$galleryHeading = $('.gallery h2'),
-	$caseNav = $('case-nav a');
+	$caseNav = $('.case-nav li');
+
 
 	// initialise page
+	history.replaceState({caseTitle:"Case 1"}, "Case 1", 'case1.html');
 	getContent("case1.html", "Case 1");
 
 
 	if (Modernizr.history) {
 
-		$(document).on("click", ".case-nav a", function(e) {
-		
-			var title = $(this).html(),
-			ajaxSrc = $(this).attr("href");
-
+		$(document).on("click", ".case-nav li", function(e) {
 			e.preventDefault();
+			var title = $(this).find('a').html(),
+			ajaxSrc = $(this).find('a').attr("href");
 
-			getContent(ajaxSrc, title);
-
+			//if (ajaxSrc.indexOf(document.domain) > -1 || ajaxSrc.indexOf(':') === -1)
+		    //{  
+			//getContent(ajaxSrc, title);
+		   	// }  
+		   	getContent(ajaxSrc, title);
+		   	history.pushState({caseTitle:title}, title, ajaxSrc);
 		}); //  end case-nav ajax
 
 		//console.log(initialURL);
 
 	} else {
 
-		// something else
+		alert("ie8");
 	}
 
 	
 	function getContent(ajaxSrc, title){
 
-		//if(history.pushState) {
-		history.pushState({caseTitle:title}, title, ajaxSrc)
-		//}
-		
+		console.log(window.history);
+	
 		$ajaxDest.load(ajaxSrc, function(){
 		  	ig();  	
 		  	$galleryHeading.html(title);
 
-
-			$('.case-nav a').removeClass('selected');
-			$(".case-nav a[href$='" + ajaxSrc + "']").addClass('selected');
-		  	//$selected.addClass('selected'); // update title
-
+			$caseNav.removeClass('selected');
+			$(".case-nav a[href$='" + ajaxSrc + "']").parent().addClass('selected');
+		  	
 		});
+
+
 	}
 
-	$(window).bind("popstate", function() {
+	$(window).on("popstate", function(e) {
+
+		
 
 		var title = (event.state.caseTitle),
 		link = location.pathname.replace(/^.*[\\/]/, ""); // get filename only
 
 		console.log("link = "+link);
+
+		if (e.originalEvent.state !== null) {
+      		getContent(link, title);	
+    	}
 		
-		if (location.pathname != initialUrl){
-			getContent(link, title);	
-		}
+		// if (location.pathname != initialUrl){
+		// // 	getContent(link, title);	
+		// }
+
 
 	});
 

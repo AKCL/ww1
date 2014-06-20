@@ -626,8 +626,9 @@
 				var nextIndex = this.getNextIndex(imageData.index);
 
 				// Construct new hidden span for the image
+
 				var newSlide = this.$imageContainer
-					.append('<span class="image-wrapper current"><a class="advance-link" rel="history" href="#'+this.data[nextIndex].hash+'" title="'+imageData.title+'">&nbsp;</a></span>')
+					.append('<span class="image-wrapper current"><a class="advance-link fancybox"  data-fancybox-group="gallery" rel="history" href="'+imageData.image.src+'" title="'+imageData.title+'">&nbsp;</a></span>')
 					.find('span.current').css('opacity', '0');
 				
 				newSlide.find('a')
@@ -644,6 +645,9 @@
 						.find('span.current').css('opacity', '0')
 						.append(imageData.caption);
 				}
+
+				var $downloadLink = $('.download a');
+				$downloadLink.addClass('fancybox');
 
 				// Hide the loading conatiner
 				if (this.$loadingContainer) {
