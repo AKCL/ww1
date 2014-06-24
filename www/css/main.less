@@ -1,6 +1,6 @@
 /*variables*/
 
-@full-width: 95%;
+@full-width: 100%;
 @header-bg: pink;
 
 // links
@@ -80,6 +80,8 @@ textarea {
     padding: 0.2em 0;
 }
 
+h1, h2, h3 { font-weight: normal;}
+
 h1 {
     font-size: 2em;
 }
@@ -89,90 +91,32 @@ h2{
 
 }
 
+h3{
+    font-size: 1.25em;
+}
+
 /* ===== Initializr Styles ==================================================
    Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
    ========================================================================== */
 
 body {
-    font: 16px/26px Helvetica, Helvetica Neue, Arial;
+    font: 16px/26px Arial, Helvetica, 'Sans Serif';
     background-color: rgb(0,0,0);
 }
 
 .wrapper {
     width: @full-width;
-    margin: 0 5%;
+    margin: 0 0;
 }
 
 
 
-/* ===================
-    ALL: Orange Theme
-   =================== */
-
-
-
-.header-container,
+header,
 .footer-container,
 .main aside {
-
+    
 }
 
-.header-container{
-    height: 65px;
-    background-color: white;
-}
-
-.title {
-    color: black;
-}
-
-/* ==============
-    MOBILE: Menu
-   ============== */
-
-nav ul {
-    margin: 0;
-    padding: 0;
-    a {
-        display: block;
-        margin-bottom: 10px;
-        padding: 0;
-
-        text-align: center;
-        text-decoration: none;
-        font-weight: bold;
-
-        color: white;
-        background: black;
-    }
-
-    a:hover,
-    a:visited {
-        color: white;
-    }
-
-    a:hover {
-        text-decoration: none;
-    }
-
-}
-
-
-
-/* ==============
-    MOBILE: Main
-   ============== */
-
-.main {
-    padding: 30px 0;
-}
-
-
-
-.main aside {
-    color: white;
-    padding: 0px 5% 10px;
-}
 
 .footer-container {
     position: fixed;
@@ -184,12 +128,15 @@ nav ul {
 
 
     img {
-        float: right;
-        width: 150px;
-        padding-top: 20px;
+
     }
 
 }
+
+.title {
+    color: black;
+}
+
 
 /* ===============
     ALL: IE Fixes
@@ -203,7 +150,61 @@ nav ul {
    Author's custom styles
    ========================================================================== */
 
-.copy{
+/// header /////////////////////////////////////////////////////////////////
+
+header{
+    height: 122px;
+    background-color: white;
+
+    h2{
+        float: left;
+    }
+
+    .brand{
+        padding: 20px 20px 0 0;
+        float: right;
+    }
+
+    nav {
+        width: 50%;
+        float: left;
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: inline;
+
+
+            li{
+                display: inline-block;
+
+                a {
+                    display: block;
+                    padding: 20px;
+
+                    text-align: center;
+                    text-decoration: none;
+                    font-weight: bold;
+
+                    color: white;
+                    background: black;
+                }
+
+                a:hover,
+                a:visited {
+                    color: white;
+                }
+
+                a:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+    }   
+}
+
+.copy {
     width: 46%;
     height:100%;
     position: fixed;
@@ -211,7 +212,6 @@ nav ul {
     right: 0;
     padding-left: 2%;
     padding-right:2%;
-
 }
 
 
@@ -222,16 +222,19 @@ nav ul {
     position: fixed;
 }
 
+
+
+
 /* ==========================================================================
 Gallery
-   ========================================================================== */
+========================================================================== */
 
 // structure
 .gallery{
-
     width: 980px;
     margin: 0 auto;
 }
+
 .navigation-container{
     width: 330px;
     margin:0;
@@ -245,18 +248,22 @@ Gallery
     position: absolute;
     z-index: 1000;
     height: 1000px; // this needs to be set in js
-    width: 180px;
     left: 0;
-    top: 65px;
+    top: 120px;
     background-color: @dk-grey;
+
+        h3{
+            padding-left:20px;
+        }
+
         ul{
-            width: 180px;
+            width: 240px;
             list-style: none;
             padding: 0;
             margin: 0;
             
             li {
-                padding: 10px;
+                padding: 10px 20px;
                 margin: 0;
                 cursor: pointer;
             }
@@ -409,7 +416,7 @@ Gallery
     } // end of .caption-container
     
 
-} // end of .content
+} // end of .content gallery styles
 
 
 div.navigation {
@@ -490,22 +497,68 @@ ul.thumbs{
 
     .pagination {
 
- 
-}
+    }
 
 }
 
-
+/////// end of gallery styles
 
 
 /* ==========================================================================
    Media Queries
    ========================================================================== */
 
-@media only screen and (min-width: 480px) {
+@media only screen and (max-width: 1140px) {
+
+/* ===============
+   Mid Width
+   =============== */
+
+}
+
+
+
+@media only screen and (max-width: 768px) {
 
 /* ====================
-    INTERMEDIATE: Menu
+    tablet portrait: CSS3 Effects
+   ==================== */
+
+
+
+/* ============
+    Menu
+   ============ */
+
+    .title {
+        float: left;
+    }
+
+    nav {
+        float: right;
+        width: 38%;
+    }
+
+/* ============
+   Main
+   ============ */
+
+    .main article {
+        float: left;
+        width: 57%;
+    }
+
+    .main aside {
+        float: right;
+        width: 28%;
+    }
+}
+
+
+@media only screen and (max-width: 480px) {
+
+/* ====================
+    Mob landscape: Menu
    ==================== */
 
     nav a {
@@ -525,7 +578,7 @@ ul.thumbs{
     }
 
 /* ========================
-    INTERMEDIATE: IE Fixes
+    IE Fixes
    ======================== */
 
     nav ul li {
@@ -537,53 +590,55 @@ ul.thumbs{
     }
 }
 
-@media only screen and (min-width: 768px) {
 
-/* ====================
-    WIDE: CSS3 Effects
-   ==================== */
+///////////////////// Menu //////////////////////////////
 
+@media only screen and (max-width: 320px) {
 
 
-/* ============
-    WIDE: Menu
-   ============ */
-
-    .title {
-        float: left;
+    .main {
+        padding: 30px 0;
     }
 
-    nav {
-        float: right;
-        width: 38%;
-    }
 
-/* ============
-    WIDE: Main
-   ============ */
-
-    .main article {
-        float: left;
-        width: 57%;
-    }
 
     .main aside {
-        float: right;
-        width: 28%;
+        color: white;
+        padding: 0px 5% 10px;
     }
+
+
+    nav ul {
+        margin: 0;
+        padding: 0;
+        a {
+            display: block;
+            margin-bottom: 10px;
+            padding: 0;
+
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+
+            color: white;
+            background: black;
+        }
+
+        a:hover,
+        a:visited {
+            color: white;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+    }
+
 }
 
-@media only screen and (min-width: 1140px) {
 
-/* ===============
-    Maximal Width
-   =============== */
 
-    .wrapper {
-        width: @full-width; /* 1140px - 10% for margins */
-        margin: 0 auto;
-    }
-}
 
 /* ==========================================================================
    Helper classes
