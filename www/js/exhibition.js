@@ -25,7 +25,7 @@ function ig(){
 	// Initialize Advanced Galleriffic Gallery
 	var gallery = $('#thumbs').galleriffic({
 	    delay:                     2500,
-	    numThumbs:                 15,
+	    numThumbs:                 10,
 	    preloadAhead:              10,
 	    enableTopPager:             1,
 	    enableBottomPager:         1,
@@ -37,8 +37,8 @@ function ig(){
 	    renderNavControls:         true,
 	    playLinkText:              'Play Slideshow',
 	    pauseLinkText:             'Pause Slideshow',
-	    prevLinkText:              '&lsaquo; Previous',
-	    nextLinkText:              'Next &rsaquo;',
+	    prevLinkText:              'Previous',
+	    nextLinkText:              'Next',
 	    nextPageLinkText:          'Next &rsaquo;',
 	    prevPageLinkText:          '&lsaquo; Prev',
 	    enableHistory:             false,
@@ -79,15 +79,15 @@ function ig(){
 
 	/**************** Event handlers for custom next / prev page links **********************/
 
-	gallery.find('a.prev').click(function(e) {
-	    gallery.previousPage();
-	    e.preventDefault();
-	});
+		gallery.find('a.prev').click(function(e) {
+		    gallery.previousPage();
+		    e.preventDefault();
+		});
 
-	gallery.find('a.next').click(function(e) {
-	    gallery.nextPage();
-	    e.preventDefault();
-	});
+		gallery.find('a.next').click(function(e) {
+		    gallery.nextPage();
+		    e.preventDefault();
+		});
 
 	/****************************************************************************************/
 
@@ -104,9 +104,10 @@ function ig(){
 
 
 	// initialise page
-	history.replaceState({caseTitle:"Case 1"}, "Case 1", 'case1.html');
-	getContent("case1.html", "Case 1");
+	//getContent("case1.html", "Case 1");
+	//history.replaceState({caseTitle:"Case 1"}, "Case 1", 'case1.html');
 
+	
 
 	if (Modernizr.history) {
 
@@ -133,8 +134,8 @@ function ig(){
 	
 	function getContent(ajaxSrc, title){
 
-		console.log(window.history);
-	
+		//console.log(window.history);
+		$ajaxDest.empty();
 		$ajaxDest.load(ajaxSrc, function(){
 		  	ig();  	
 		  	$galleryHeading.html(title);
