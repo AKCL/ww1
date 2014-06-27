@@ -621,6 +621,11 @@
 			// as the out transition when performing a synchronous transition.
 			// @param {Object} imageData An object holding the image metadata of the image to build.
 			// @param {Boolean} isSync Specifies whether the transitions are synchronized.
+			
+			// checkImage: function(){
+
+			// }
+
 			buildImage: function(imageData, isSync) {
 				var gallery = this;
 				var nextIndex = this.getNextIndex(imageData.index);
@@ -636,6 +641,8 @@
 					.click(function(e) {
 						gallery.clickHandler(e, this);
 					});
+				
+				//alert(newSlide.find('a img').height());
 				
 				var newCaption = 0;
 				if (this.$captionContainer) {
@@ -654,6 +661,7 @@
 					this.$loadingContainer.hide();
 				}
 
+				//alert(this.$imageContainer.width());
 				// Transition in the new image
 				if (this.onTransitionIn) {
 					this.onTransitionIn(newSlide, newCaption, isSync);

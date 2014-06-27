@@ -7,6 +7,8 @@ $('.bg-image').backstretch("img/BritishArtists.Nash2.jpg");
 $('.copy').backstretch("img/old.paper.jpg");
 
 
+
+
 function ig(){
 
 	var onMouseOutOpacity = 0.5;
