@@ -3,11 +3,6 @@
 
 jQuery(document).ready(function($) {
 
-$('.bg-image').backstretch("img/BritishArtists.Nash2.jpg");
-$('.copy').backstretch("img/old.paper.jpg");
-
-
-
 
 function ig(){
 
@@ -106,62 +101,96 @@ function ig(){
 
 
 	// initialise page
-	//getContent("case1.html", "Case 1");
-	//history.replaceState({caseTitle:"Case 1"}, "Case 1", 'case1.html');
 
+	// console.log(window.location.hash);
+	// console.log(window.location.pathname.split( '#' ));
+	//window.location.pathname = "example/index.html"
+	var hash = window.location.hash;
+
+	/// deals with refresh of browser
+	if (hash){
+		$ajaxSrc = hash.split('#')[1]+".html"; 
+		getContent($ajaxSrc);
+	}
+	// deals with initial load
+	else {
+		getContent("case1.html");
+		if(Modernizr.history){
+			history.replaceState('#case1');
+		}
+	}
 	
-
-	if (Modernizr.history) {
+	//if (Modernizr.history) {
 
 		$(document).on("click", ".case-nav li", function(e) {
 			e.preventDefault();
-			var title = $(this).find('a').html(),
-			ajaxSrc = $(this).find('a').attr("href");
-
+			//var title = $(this).find('a').html(),
+			var ajaxSrc = $(this).find('a').attr("href"),
+			hash = "#"+ajaxSrc.split(".")[0];
+			//console.log(title +", "+ ajaxSrc)
 			//if (ajaxSrc.indexOf(document.domain) > -1 || ajaxSrc.indexOf(':') === -1)
 		    //{  
 			//getContent(ajaxSrc, title);
 		   	// }  
-		   	getContent(ajaxSrc, title);
-		   	history.pushState({caseTitle:title}, title, ajaxSrc);
+		   	getContent(ajaxSrc);
+
+		   	if (Modernizr.history) {
+		   		history.pushState('','', hash);
+		   }
+		   return false;
 		}); //  end case-nav ajax
 
 		//console.log(initialURL);
 
-	} else {
+	// } else {
 
-		alert("ie8");
-	}
+	// 	alert("ie8");
+	// }
 
 	
-	function getContent(ajaxSrc, title){
+	function getContent(ajaxSrc){
 
 		//console.log(window.history);
-		$ajaxDest.empty();
+		$ajaxDest.empty(); // unload the container
 		$ajaxDest.load(ajaxSrc, function(){
 		  	ig();  	
-		  	$galleryHeading.html(title);
-
+		  	
 			$caseNav.removeClass('selected');
 			$(".case-nav a[href$='" + ajaxSrc + "']").parent().addClass('selected');
+			var title = $(".case-nav a[href$='" + ajaxSrc + "']").attr("title");
+			//console.log(title);
+			$galleryHeading.html(title);
 		  	
 		});
 
 
 	}
 
-	$(window).on("popstate", function(e) {
+	$(window).on("popstate", function(event) {
 
-		
+		//var title = (event.state.caseTitle);
+		//console.log(JSON.stringify(event.state.caseTitle));
 
-		var title = (event.state.caseTitle),
-		link = location.pathname.replace(/^.*[\\/]/, ""); // get filename only
+		//var title = "the ie title";
+		var link = location.pathname.replace(/^.*[\\/]/, ""),
+		hash = hash = window.location.hash;
+		// get filename only
 
-		console.log("link = "+link);
+		//console.log("link = "+link+", and hash = "+hash );
 
-		if (e.originalEvent.state !== null) {
-      		getContent(link, title);	
-    	}
+		// if hash is present in previous state
+		if (hash){
+			$ajaxSrc = hash.split('#')[1]+".html"; 
+			getContent($ajaxSrc);
+		}
+		// deals with initial load
+		else {
+			getContent(link);
+		}
+
+		// if (e.originalEvent.state !== null) {
+  //     		getContent(link, title);	
+  //   	}
 		
 		// if (location.pathname != initialUrl){
 		// // 	getContent(link, title);	

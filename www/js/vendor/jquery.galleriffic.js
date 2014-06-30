@@ -641,8 +641,67 @@
 					.click(function(e) {
 						gallery.clickHandler(e, this);
 					});
+
+				// console.log(newSlide.height());
+				// console.log(this.$imageContainer.width());
+
+				// scale image
+
+				var $img = newSlide.find('a img'),
+			    w = $img.width(),
+			   	h = $img.height(),
+			    tw = newSlide.width(),
+			    th = newSlide.height(),
+			    fLetterBox = true,
+			    scaleImg = { width: 0, height: 0, fScaleTotw: true };
+
+			    //console.log(scaleImg);
+			    //console.log("img h: "+h+", img w: "+w+", container h: "+th+", container w: "+tw);
+
+			    // compute the new size and offsets
+
+			    if ((w <= 0) || (h <= 0) || (tw <= 0) || (tw <= 0)) {
+			        return result;
+			    }
+
+			    // scale to the target width
+			    var scaleX1 = tw, scaleY1 = (h * tw) / w,
+			    // scale to the target height
+			    scaleX2 = (w * th) / h, scaleY2 = th,
+			    // now figure out which one we should use
+				fScaleOnWidth = (scaleX2 > tw);
+
+			    if (fScaleOnWidth) {
+			        fScaleOnWidth = fLetterBox;
+			    }
+			    else {
+			       fScaleOnWidth = !fLetterBox;
+			    }
+
+			    if (fScaleOnWidth) {
+			        scaleImg.width = Math.floor(scaleX1);
+			        scaleImg.height = Math.floor(scaleY1);
+			        scaleImg.fScaleTotw = true;
+			    }
+			    else {
+			        scaleImg.width = Math.floor(scaleX2);
+			        scaleImg.height = Math.floor(scaleY2);
+			        scaleImg.fScaleTotw = false;
+			    }
+
+			    scaleImg.targetleft = Math.floor((tw - scaleImg.width) / 2);
+			    scaleImg.targettop = Math.floor((th - scaleImg.height) / 2);
+
+			    //console.log(scaleImg);
+
+			    // adjust the image coordinates and size
+			    $img.width(scaleImg.width)
+			    $img.height(scaleImg.height);
+			   	$img.css("left", scaleImg.targetleft);
+			    $img.css("top", scaleImg.targettop);
 				
-				//alert(newSlide.find('a img').height());
+
+			    //// end of scale image
 				
 				var newCaption = 0;
 				if (this.$captionContainer) {
@@ -661,7 +720,7 @@
 					this.$loadingContainer.hide();
 				}
 
-				//alert(this.$imageContainer.width());
+				
 				// Transition in the new image
 				if (this.onTransitionIn) {
 					this.onTransitionIn(newSlide, newCaption, isSync);

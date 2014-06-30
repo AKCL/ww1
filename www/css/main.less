@@ -456,7 +456,6 @@ Gallery
     .slideshow-container {
         position: relative;
         clear: both;
-        height: @gal-height;/* This should be set to be at least the height of the largest image in the slideshow */
         background-color: @dk-grey;
         
         
@@ -475,6 +474,9 @@ Gallery
 
         .slideshow {
 
+            height: @gal-height;/* This should be set to be at least the height of the largest image in the slideshow */
+            height: @gal-width;/* This should be set to be at least the height of the largest image in the slideshow */
+
             span.image-wrapper {
                 display: inline-block;
                 position: absolute;
@@ -482,22 +484,21 @@ Gallery
             }
 
             a.advance-link {
-                display: inline-block;
+                display: block;
                 width: @gal-width;
                 height: @gal-height; /* This should be set to be at least the height of the largest image in the slideshow */
-                line-height: @gal-height; /* This should be set to be at least the height of the largest image in the slideshow */
+                line-height: 0; /* This should be set to be at least the height of the largest image in the slideshow */
                 text-align: center;
+                text-decoration: none;
             }
              a.advance-link:hover,  a.advance-link:active,  a.advance-link:visited {
                 text-decoration: none;
             }
 
             img {
-                border: 0 solid #ccc;
-                vertical-align: center;    
+                display: block;
+                border: 0 solid #ccc;    
                 position: relative;
-                top: 0;
-                min-width: 99%;
             }
 
 
@@ -827,19 +828,25 @@ Fancybox
     visibility: hidden;
 }
 
-.clearfix:before,
 .clearfix:after {
-    content: " ";
-    display: table;
+  content: "";
+  display: table;
+  clear: both;
 }
 
-.clearfix:after {
-    clear: both;
-}
+// .clearfix:before,
+// .clearfix:after {
+//     content: " ";
+//     display: table;
+// }
 
-.clearfix {
-    *zoom: 1;
-}
+// .clearfix:after {
+//     clear: both;
+// }
+
+// .clearfix {
+//     *zoom: 1;
+// }
 
 /* ==========================================================================
    Print styles
