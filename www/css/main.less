@@ -4,20 +4,25 @@ variables
 
 //dimansions
 @full-width: 100%;
+@min-width: 980px;
 @header-height: 120px;
 
 @header-bg: pink;
 
 // links
 @link-color: white;
+// blue?
+// green?
 
 // font styles
 @font-body-color: white;
 @font-base-size: 1em;
 
 // gallery
-@gal-height: 600px;
-@gal-width: 600px;
+@case-nav-width: 280px;
+@nav-width:280px;
+@gal-width: 700px;
+@gal-height: 625px;
 
 //fonts
 
@@ -30,7 +35,11 @@ variables
 @akcl-ltblue: #215584;
 @aklib-green: #789931;
 
+// bg colors
+@white: white;
 
+
+@bgimg-felt-black: '../img/skewed_print.png';
 // radius
 
 @main-rad:5px;
@@ -82,6 +91,80 @@ Fonts
     font-weight: normal;
     font-style: normal;
 
+}
+
+@font-face {
+    font-family: 'icomoon';
+    src:url('../fonts/icomoon.eot?9w79i0');
+    src:url('../fonts/icomoon.eot?#iefix9w79i0') format('embedded-opentype'),
+        url('../fonts/icomoon.woff?9w79i0') format('woff'),
+        url('../fonts/icomoon.ttf?9w79i0') format('truetype'),
+        url('../fonts/icomoon.svg?9w79i0#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-download:before {
+    content: "\e600";
+}
+.icon-menu:before {
+    content: "\e601";
+}
+.icon-close:before {
+    content: "\e602";
+}
+.icon-minus:before {
+    content: "\e603";
+}
+.icon-plus:before {
+    content: "\e604";
+}
+.icon-minus2:before {
+    content: "\e605";
+}
+.icon-plus2:before {
+    content: "\e606";
+}
+.icon-cross:before {
+    content: "\e607";
+}
+.icon-minus3:before {
+    content: "\e608";
+}
+.icon-plus3:before {
+    content: "\e609";
+}
+.icon-cross2:before {
+    content: "\e60a";
+}
+.icon-list:before {
+    content: "\e60b";
+}
+.icon-install:before {
+    content: "\e60c";
+}
+.icon-resize-enlarge:before {
+    content: "\e60d";
+}
+.icon-arrow-left:before {
+    content: "\e60e";
+}
+.icon-arrow-left2:before {
+    content: "\e60f";
 }
 
 /*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
@@ -143,14 +226,17 @@ textarea {
 
 h1, h2, h3 {
     font-family: ac_blissmedium;
-    font-weight: normal;}
+    font-weight: normal;
+}
 
 h1 {
-    font-size: 3em;
+    font-size: 2em;
 }
 
 h2{
     font-size: 2em;
+    margin-bottom: 0;
+    line-height:.2em;
 }
 
 h3{
@@ -164,18 +250,20 @@ h3{
 body {
     font: 16px/26px Arial, Helvetica, 'Sans Serif';
     background-color: rgb(0,0,0);
+    background-image: url(@bgimg-felt-black);
+    margin:0;
+    padding: 0;
 }
 
 .wrapper {
-    width: @full-width;
+    max-width:@full-width;;
+    min-width:@min-width;
     margin: 0 0;
 }
 
 
-header,
-.footer-container,
-.main aside {
-    
+.main-container{
+    margin-top: 0;
 }
 
 
@@ -215,6 +303,15 @@ header,
 Anchors and buttons
 //////////////////////////////////////*/
 
+a:focus,  a:hover,  a:active {
+   text-decoration: none;
+}
+
+a, .navigation a {
+    text-decoration: none;
+    color: @link-color;
+}
+
 .BorderRadius (@radius: 5px) {
     -webkit-border-radius: @radius;
     -moz-border-radius:    @radius;
@@ -233,13 +330,18 @@ Anchors and buttons
     text-decoration: none;
     color: white;
     background-color:  @dk-grey;
-    padding: .5em;
+    padding: 0.5em;
+    line-height:2em;
 }
 
 .ButtonHover{
     text-decoration: none;
     color: white;
     background-color:  @mid-grey;
+}
+
+.ControlButtonContainer{
+    display: block;
 }
 
 a.button,
@@ -273,10 +375,11 @@ a.button.back {
 
 header{
     height: @header-height;
-    background-color: #ded1c0;
+    background-color: white;
     vertical-align: center;
     
-    a.back {
+    a.button.back {
+        display: none; /// temp
         position: absolute;
         z-index: 100;
         height: @header-height;
@@ -285,10 +388,10 @@ header{
         left: 0;
       }   
 
-    h2{
+    h1{
         display: inline;
         position: relative;
-        left: 50px;
+        left: 15px;
         margin:0;
         padding: 0;
         float: left;
@@ -299,6 +402,7 @@ header{
 
         img{
             display: block;
+            border: none;
             width: 700px;
             line-height: 120px;
         }
@@ -349,17 +453,31 @@ h1{
 Gallery
 ========================================================================== */
 
-// structure
+// gallery structure
+
 .gallery{
     width: 980px;
     margin: 0 auto;
 }
 
-.navigation-container{
-    width: 330px;
+// two columns
+
+.NavContainer{
+    top:2em;
+    width: @nav-width;
+    position: relative;
     margin:0;
     float: left;
     display: block;
+}
+
+.Content{
+    top: 2em;
+    width: @gal-width;
+    position:relative;
+    float: right;
+    display: none;
+
 }
 
 // case navigation //
@@ -369,44 +487,67 @@ Gallery
     z-index: 1000;
     height: 1000px; // this needs to be set in js
     left: 0;
-    top: 120px;
     background-color: @dk-grey;
+    width: @case-nav-width;
+    
+    a{
+        display: block;
+        position: relative;
+        padding-left:20px;
+        color: white;
 
         h3{
-            padding-left:20px;
+            
+        }
+        span{
+            font-size: 1.66em;
+            display: block;
+            position: absolute;
+            right: 1em;
+            top: 0;
+        }
+    }
+
+    a:link,  a:active, a:visited {
+        text-decoration: none;
+    }
+
+    a:hover{
+        color: blue;
+    }
+
+    ul{
+        width: 100%;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        
+        li {
+            padding: 10px 20px;
+            margin: 0;
+            cursor: pointer;
         }
 
-        ul{
-            width: 240px;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            
-            li {
-                padding: 10px 20px;
-                margin: 0;
-                cursor: pointer;
-            }
+        li a{
+             padding-left: 0;
+        }
 
-            li.selected{
-                background-color: @lt-grey;
-            }
-            
-            li:hover{
-                background-color: @mid-grey;
-            }
-            li.selected a{
-                color: white;
-            }
-            li a, li:link a,  li:active, li:visited {
-                color: @white-grey;
-                text-decoration: none;
-            }
+        li.selected{
+            background-color: @lt-grey;
+        }
+        
+        li:hover{
+            background-color: @mid-grey;
+        }
+        li.selected a{
+            color: white;
+        }
+        li a, li:link a,  li:active, li:visited { 
+            color: @white-grey;
+            text-decoration: none;
+        }
 
-
-        } 
-   
-
+    } 
 }
 
 // if using scroll box for thumbs
@@ -423,43 +564,35 @@ Gallery
 
 .content {
     /* The display of content is enabled using jQuery so that the slideshow content won't display unless javascript is enabled. */
-    display: none;
-    float: right;
-    width: @gal-width;
 
-
-    // a:focus,  a:hover,  a:active {
-    //    text-decoration: underline;
-    // }
-    // a, .navigation a {
-    //     text-decoration: none;
-    //     color: @link-color;
-    // }
+    .Content();
 
     .controls {
+            
+            .ControlButtonContainer();
+
             .ss-controls {
                 float: left;
                 display: none;
             }
             .nav-controls {
                 float: right;
+    
 
                  a.button.prev, .button.next {
                     display:inline;
-                    margin: 0 0 .3em .3em;
+                    margin: 0 0 0 0.3em;
                     position: relative;
-                    top: -.5em;
                 }
             }
         } // end of .controls
 
     .slideshow-container {
+
         position: relative;
         clear: both;
         background-color: @dk-grey;
-        
-        
-
+        top: 1em;
 
         .loader {
             position: absolute;
@@ -475,7 +608,7 @@ Gallery
         .slideshow {
 
             height: @gal-height;/* This should be set to be at least the height of the largest image in the slideshow */
-            height: @gal-width;/* This should be set to be at least the height of the largest image in the slideshow */
+            width: @gal-width;/* This should be set to be at least the height of the largest image in the slideshow */
 
             span.image-wrapper {
                 display: inline-block;
@@ -500,7 +633,6 @@ Gallery
                 border: 0 solid #ccc;    
                 position: relative;
             }
-
 
         } // end of .slideshow
 
@@ -545,92 +677,83 @@ Gallery
 
     } // end of .caption-container
 
-
-
-
 } // end of .content gallery styles
 
+///// pagination mixins
 
-div.navigation {
-    /* The navigation style is set using jQuery so that the javascript specific styles won't be applied unless javascript is enabled. */
-}
-
-ul.thumbs{
+.Pagination{
     clear: both;
-    margin: 0;
-    padding: 0;
-
-    li {
-        float: left;
-        padding: 0;
-        list-style: none;
-    }
-
-    a.thumb {
-        padding: 0;
-        display: block;
-        //border: 1px solid white;
-    }
-
-    .selected a.thumb {
-        background: #000;
-        
-    }
-
-    a.thumb:focus {
-        outline: none;
-    }
-
-    img {
-        border: none;
-        display: block;
-        width: 125px;
-    }
-}
-
-
-
-.navigation {
-    div.top {
-        margin-bottom: 12px;
-        height: 11px;
-    }
-    div.navigation div.bottom {
-        margin-top: 12px;
-     }
-}
-
-
-
-.pagination {
-    clear: both;
+    height: 3em;
 
     a, .current, .ellipsis {
-        display: block;
-        float: left;
-        margin-right: 2px;
-        padding: 4px 7px 2px 7px;
-        border: 1px solid #ccc;
+        .Button();
+        display:inline;
+        margin: 0 .3em 0 0;
     }
     a:hover {
-        background-color: #eee;
-        text-decoration: none;
+        .ButtonHover();
     }
-   .current {
-        background-color: #000;
-        border-color: #000;
-        color: #fff;
+    .current {
+        .ButtonHover();
     }
     .ellipsis {
         border: none;
         padding: 5px 0 3px 2px;
     }
-
-    .pagination {
-
-    }
-
 }
+
+.navigation-container{
+    .NavContainer();
+
+
+    .navigation{  
+
+        .top {
+            .ControlButtonContainer();
+            display: block;
+            .Pagination();
+        }
+        .bottom {
+            .ControlButtonContainer();
+            margin: .66em 0 0 0;
+            .Pagination();
+         }
+
+        ul.thumbs{
+            width: 100%;
+            margin: 0;
+            padding: 0;
+
+            li {
+                float: left;
+                padding: 0;
+                list-style: none;
+            }
+
+            a.thumb {
+                padding: 0;
+                display: block;
+                //border: 1px solid white;
+            }
+
+            .selected a.thumb {
+                background: #000;
+                
+            }
+
+            a.thumb:focus {
+                outline: none;
+            }
+
+            img {
+                border: none;
+                display: block;
+                width: 125px;
+            }
+        }
+    }
+}
+
 
 /////// end of gallery styles
 
@@ -647,6 +770,52 @@ Fancybox
 /* ==========================================================================
    Media Queries
    ========================================================================== */
+@media only screen and (max-width: 1620px) {
+
+/* ===============
+   Laptop Width
+   =============== */
+
+   .main-container{
+    margin-left:310px;
+   }
+
+}
+
+@media only screen and (max-width: 1330px) {
+
+/* ===============
+   Laptop Width
+   =============== */
+
+    header{  
+        h1{
+            img{
+                width: 600px;
+            }
+        }   
+          .brand{
+            padding: 30px 10px 0 0;
+            
+            img{
+                width: 160px;
+            }
+        }
+    }
+
+   .case-nav{
+    left: -280px;
+    
+    a{
+      width: 320px;  
+    }
+   }
+
+    .main-container{
+    margin: 0 auto;
+   }
+
+}
 
 @media only screen and (max-width: 1140px) {
 

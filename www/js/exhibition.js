@@ -1,8 +1,45 @@
 // custom.js
-// document.write('<style>.noscript { display: none; }</style>'); add to exhib page
+document.write('<style>.noscript { display: none; }</style>');
 
 jQuery(document).ready(function($) {
 
+
+//page resize functions
+
+var winW,winH,winOH,
+headerHeight = $('header').height(),
+$navTrigger = $('.case-nav a');
+
+
+function getWindowDimensions(){
+	winW = window.innerWidth;
+	console.log(winW);
+	winH = window.innerHeight;
+	console.log(winH);
+	winOW = window.outerWidth;
+	console.log(winOW);
+	winOH = window.outerHeight;
+	console.log(winOH);
+}
+
+function setMenu(){
+	console.log('resize');
+	$('.case-nav').height(winOH-headerHeight).css({'top':headerHeight});
+}
+
+$navTrigger.parent().not('nav-expanded').click(function(e){
+	e.preventDefault();
+
+     $('.case-nav').addClass('nav-expanded');
+ });
+
+$( window ).resize(function() {
+  getWindowDimensions();
+  setMenu();
+});
+
+
+setMenu();
 
 function ig(){
 
@@ -91,20 +128,15 @@ function ig(){
 	} /////////////////////////////////// end of ig()//////////////////////////////////////
 
 	// http://rosspenman.com/pushstate-jquery/ more ...
-	
-	//window.location = "index.html"; // load in the
 
-	var initialUrl = location.pathname;
+	//var initialUrl = window.URL;
 	var $ajaxDest = $('.thumbs'),
+	$ajaxSrc,
 	$galleryHeading = $('.gallery h2'),
 	$caseNav = $('.case-nav li');
 
-
 	// initialise page
 
-	// console.log(window.location.hash);
-	// console.log(window.location.pathname.split( '#' ));
-	//window.location.pathname = "example/index.html"
 	var hash = window.location.hash;
 
 	/// deals with refresh of browser
@@ -114,31 +146,27 @@ function ig(){
 	}
 	// deals with initial load
 	else {
-		getContent("case1.html");
+		getContent("case1.html"); // or load first item or initialURL
+		
 		if(Modernizr.history){
-			history.replaceState('#case1');
+			//alert("history");
+			history.replaceState('', '', '#case1'); // or relace with first hash
 		}
 	}
 	
-	//if (Modernizr.history) {
 
-		$(document).on("click", ".case-nav li", function(e) {
-			e.preventDefault();
-			//var title = $(this).find('a').html(),
-			var ajaxSrc = $(this).find('a').attr("href"),
-			hash = "#"+ajaxSrc.split(".")[0];
-			//console.log(title +", "+ ajaxSrc)
-			//if (ajaxSrc.indexOf(document.domain) > -1 || ajaxSrc.indexOf(':') === -1)
-		    //{  
-			//getContent(ajaxSrc, title);
-		   	// }  
-		   	getContent(ajaxSrc);
+	$(document).on("click", ".case-nav li", function(e) {
+		e.preventDefault();
+		var ajaxSrc = $(this).find('a').attr("href"),
+		hash = "#"+ajaxSrc.split(".")[0];
 
-		   	if (Modernizr.history) {
-		   		history.pushState('','', hash);
-		   }
-		   return false;
-		}); //  end case-nav ajax
+	   	getContent(ajaxSrc);
+
+	   	if (Modernizr.history) {
+	   		history.pushState('','', hash);
+	   }
+	   return false;
+	}); //  end case-nav ajax
 
 		//console.log(initialURL);
 
@@ -153,47 +181,37 @@ function ig(){
 		//console.log(window.history);
 		$ajaxDest.empty(); // unload the container
 		$ajaxDest.load(ajaxSrc, function(){
-		  	ig();  	
-		  	
+		  	ig();  // initialise gallery
 			$caseNav.removeClass('selected');
 			$(".case-nav a[href$='" + ajaxSrc + "']").parent().addClass('selected');
 			var title = $(".case-nav a[href$='" + ajaxSrc + "']").attr("title");
-			//console.log(title);
 			$galleryHeading.html(title);
+			console.log(ajaxSrc.indexOf(document.domain));
+			console.log(ajaxSrc.indexOf(':'));
 		  	
 		});
-
-
 	}
 
 	$(window).on("popstate", function(event) {
 
-		//var title = (event.state.caseTitle);
-		//console.log(JSON.stringify(event.state.caseTitle));
-
-		//var title = "the ie title";
-		var link = location.pathname.replace(/^.*[\\/]/, ""),
-		hash = hash = window.location.hash;
+		//var link = location.pathname.replace(/^.*[\\/]/, "")
+		var hash = window.location.hash;
+		
+		console.log(window.URL);
 		// get filename only
 
-		//console.log("link = "+link+", and hash = "+hash );
-
-		// if hash is present in previous state
+		// if hash is present in cued state or if the current path doesn't equal the original one
 		if (hash){
 			$ajaxSrc = hash.split('#')[1]+".html"; 
 			getContent($ajaxSrc);
 		}
 		// deals with initial load
-		else {
-			getContent(link);
-		}
+		// else {
+		// 	getContent(link);
+		// }
 
-		// if (e.originalEvent.state !== null) {
-  //     		getContent(link, title);	
-  //   	}
-		
-		// if (location.pathname != initialUrl){
-		// // 	getContent(link, title);	
+		// if (){
+		// 	getContent(link, title);	
 		// }
 
 
