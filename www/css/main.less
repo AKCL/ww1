@@ -7,27 +7,43 @@ variables
 @min-width: 980px;
 @header-height: 120px;
 
-@header-bg: pink;
-
 // links
 @link-color: white;
 // blue?
 // green?
 
+
+
+
+// gallery
+@case-nav-width: 280px;
+@nav-width:270px;
+@gal-width: 710px;
+@gal-height: 625px;
+
 // font styles
 @font-body-color: white;
 @font-base-size: 1em;
 
-// gallery
-@case-nav-width: 280px;
-@nav-width:280px;
-@gal-width: 700px;
-@gal-height: 625px;
+// .FontSize(@sizeValue) {
+//   @remValue: @sizeValue;
+//   @pxValue: (@sizeValue * 10);
+//   font-size: ~"@{pxValue}px"; 
+//   font-size: ~"@{remValue}rem";
+// }
 
-//fonts
+.FontSizer(@string) {
+    @remfont: (@string / 10);
+    @remline: (@string / 10) * 1.5;
+    font-size: @string * 1px;
+    font-size: ~"@{remfont}rem";
+    line-height: @string * 1.5px;
+    line-height: ~"@{remline}rem";
+}
 
 //colors
-@dk-grey: #111;
+@blk-grey:#0A0A0A;
+@dk-grey: #0D0D0D;
 @mid-grey:#222;
 @lt-grey: #333;
 @white-grey:#555;
@@ -178,17 +194,16 @@ textarea {
 }
 
 html {
-    font-size: @font-base-size;
-    line-height: @font-base-size*1.5;
+  font-size: 62.5%; /* Sets up the Base 10 stuff */
 }
 
 ::-moz-selection {
-    background: #b3d4fc;
+    background: @akcl-ltblue;
     text-shadow: none;
 }
 
 ::selection {
-    background: #b3d4fc;
+    background: @akcl-ltblue;
     text-shadow: none;
 }
 
@@ -230,7 +245,7 @@ h1, h2, h3 {
 }
 
 h1 {
-    font-size: 2em;
+    .FontSizer(16);
 }
 
 h2{
@@ -248,9 +263,10 @@ h3{
    ========================================================================== */
 
 body {
-    font: 16px/26px Arial, Helvetica, 'Sans Serif';
-    background-color: rgb(0,0,0);
-    background-image: url(@bgimg-felt-black);
+    .FontSizer(16);
+    font-face: Arial, Helvetica, 'Sans Serif';
+    background-color: @dk-grey;
+   
     margin:0;
     padding: 0;
 }
@@ -263,7 +279,7 @@ body {
 
 
 .main-container{
-    margin-top: 0;
+    margin: 0 310px 0 auto;
 }
 
 
@@ -395,6 +411,7 @@ header{
         margin:0;
         padding: 0;
         float: left;
+        line-height: 1em;
         
         span {
             visibility: hidden;
@@ -462,7 +479,7 @@ Gallery
 
 // two columns
 
-.NavContainer{
+.ThumbContainer{
     top:2em;
     width: @nav-width;
     position: relative;
@@ -481,39 +498,51 @@ Gallery
 }
 
 // case navigation //
+a.trigger{
+    display: block;
+    position: absolute;
+    z-index: 1001;
+    right: 0;
+    height: 50px;
+    width: @case-nav-width;
+    color: white;
+    background-color: @blk-grey;
+    
+
+
+    h3{
+        padding-left: 20px;
+        line-height: .5em;;
+    }
+    span{
+        font-size: 1.5em;
+        display: block;
+        position: absolute;
+        right: .66em;
+        top: .5em;
+    }
+
+}
+
+
+
+a.trigger:hover{
+    color: white;
+}
+
+
 
 .case-nav{
     position: absolute;
     z-index: 1000;
-    height: 1000px; // this needs to be set in js
-    left: 0;
-    background-color: @dk-grey;
+    right: 0;
+    background-color: @blk-grey;
     width: @case-nav-width;
-    
-    a{
-        display: block;
-        position: relative;
-        padding-left:20px;
-        color: white;
+    //top:170px;
+    display: none;
 
-        h3{
-            
-        }
-        span{
-            font-size: 1.66em;
-            display: block;
-            position: absolute;
-            right: 1em;
-            top: 0;
-        }
-    }
-
-    a:link,  a:active, a:visited {
+    a:link,  a:hover, a:active, a:visited {
         text-decoration: none;
-    }
-
-    a:hover{
-        color: blue;
     }
 
     ul{
@@ -523,7 +552,7 @@ Gallery
         margin: 0;
         
         li {
-            padding: 10px 20px;
+            padding: .66em 1.5em;
             margin: 0;
             cursor: pointer;
         }
@@ -537,7 +566,11 @@ Gallery
         }
         
         li:hover{
-            background-color: @mid-grey;
+            background-color: @mid-grey; 
+        }
+
+        li:hover a{
+            color: white;
         }
         li.selected a{
             color: white;
@@ -549,6 +582,12 @@ Gallery
 
     } 
 }
+
+.case-nav.expanded{
+    display: block;
+}
+
+
 
 // if using scroll box for thumbs
 
@@ -592,6 +631,7 @@ Gallery
         position: relative;
         clear: both;
         background-color: @dk-grey;
+        background-image: url(@bgimg-felt-black);
         top: 1em;
 
         .loader {
@@ -638,18 +678,15 @@ Gallery
 
     } //end of .slideshow-container
 
-    .download {
-        float: right;
-    }
+
 
     .caption-container {
+        margin: 2em 0;
         position: relative;
-        clear: left;
-
 
         .photo-index {
             color: #888;
-            display: none; 
+            //display: block; 
         // have no idea where this is coming from
         }
 
@@ -671,8 +708,13 @@ Gallery
         }
 
         .image-desc {
-            line-height: 1.5em;
-            padding-top: @font-base-size;
+            .FontSizer(16);
+            padding: 1em 0 3em 0;
+        }
+
+        .download {
+        float: right;
+        display: none;
         }
 
     } // end of .caption-container
@@ -703,7 +745,7 @@ Gallery
 }
 
 .navigation-container{
-    .NavContainer();
+    .ThumbContainer();
 
 
     .navigation{  
@@ -776,9 +818,6 @@ Fancybox
    Laptop Width
    =============== */
 
-   .main-container{
-    margin-left:310px;
-   }
 
 }
 
@@ -803,13 +842,6 @@ Fancybox
         }
     }
 
-   .case-nav{
-    left: -280px;
-    
-    a{
-      width: 320px;  
-    }
-   }
 
     .main-container{
     margin: 0 auto;
