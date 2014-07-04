@@ -5,15 +5,12 @@ variables
 //dimansions
 @full-width: 100%;
 @min-width: 980px;
-@header-height: 120px;
+@header-height: 6.5em;
 
 // links
 @link-color: white;
 // blue?
 // green?
-
-
-
 
 // gallery
 @case-nav-width: 280px;
@@ -22,40 +19,40 @@ variables
 @gal-height: 625px;
 
 // font styles
-@font-body-color: white;
-@font-base-size: 1em;
 
-// .FontSize(@sizeValue) {
-//   @remValue: @sizeValue;
-//   @pxValue: (@sizeValue * 10);
-//   font-size: ~"@{pxValue}px"; 
-//   font-size: ~"@{remValue}rem";
-// }
+@font-base-size: 1em;
 
 .FontSizer(@string) {
     @remfont: (@string / 10);
-    @remline: (@string / 10) * 1.5;
+    @remline: (@string / 10) * 1.4;
     font-size: @string * 1px;
     font-size: ~"@{remfont}rem";
     line-height: @string * 1.5px;
     line-height: ~"@{remline}rem";
 }
 
-//colors
-@blk-grey:#0A0A0A;
-@dk-grey: #0D0D0D;
-@mid-grey:#222;
-@lt-grey: #333;
-@white-grey:#555;
 
-@akcl-ltblue: #215584;
-@aklib-green: #789931;
+
+@font-body-color: @color-white-grey;
+
+//colors
+
+@color-trans-blk: rgba(0,0,0,0.5);
+@color-blk-grey:#0A0A0A;
+@color-dk-grey: #111111;
+@color-mid-grey:#222;
+@color-lt-grey: #333;
+@color-white-grey:#f5f5f5;
+
+@color-akcl-ltblue: #215584;
+@color-aklib-green: #789931;
 
 // bg colors
-@white: white;
+@color-white: white;
 
 
-@bgimg-felt-black: '../img/skewed_print.png';
+@bg-image-dk1: '../img/blackorchid.png';
+
 // radius
 
 @main-rad:5px;
@@ -81,8 +78,6 @@ Fonts
     font-style: normal;
 
 }
-
-
 
 @font-face {
     font-family: 'ac_blisslight';
@@ -198,12 +193,14 @@ html {
 }
 
 ::-moz-selection {
-    background: @akcl-ltblue;
+    background:@color-aklib-green;
+    color: white;
     text-shadow: none;
 }
 
 ::selection {
-    background: @akcl-ltblue;
+    background: @color-aklib-green;
+    color: white;
     text-shadow: none;
 }
 
@@ -239,7 +236,7 @@ textarea {
     padding: 0.2em 0;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4{
     font-family: ac_blissmedium;
     font-weight: normal;
 }
@@ -249,52 +246,95 @@ h1 {
 }
 
 h2{
-    font-size: 2em;
-    margin-bottom: 0;
-    line-height:.2em;
+    .FontSizer(32);
+    margin:  .33em 0 0 0;
+
 }
 
 h3{
-    font-size: 1.25em;
+    .FontSizer(16);
+    margin: 0;
 }
+
+h4{
+    .FontSizer(20);
+    line-height: 1;
+
+}
+
 
 /* ===== Initializr Styles ==================================================
    Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
    ========================================================================== */
 
 body {
-    .FontSizer(16);
+    .FontSizer(18);
     font-face: Arial, Helvetica, 'Sans Serif';
-    background-color: @dk-grey;
-   
     margin:0;
     padding: 0;
+    color:#313630;
 }
 
-.wrapper {
-    max-width:@full-width;;
-    min-width:@min-width;
-    margin: 0 0;
+body.exhibition{
+    color: @font-body-color;
+    background-image:url(@bg-image-dk1);
+}
+
+.intro .wrapper {
+    max-width:1100px;
+    min-width:980px;
+    margin: 0 auto;
 }
 
 
-.main-container{
+.exhibition header{
+    background-image: url(../img/cardbg.jpg);
+    min-wdth: 980px;
+}
+
+.exhibition .wrapper{
+    max-width: auto;
+    width: auto;
+    min-width:980px;
     margin: 0 310px 0 auto;
+    padding: 0;
+    min-wdth: 980px;
 }
 
 
-.footer-container {
-    position: fixed;
+footer{
+
+    background:white;
     width: 100%;
-    left:0;
-    bottom:0;
-    height: 90px;
-    padding: 0 10px;
+    height: 6em;
+    clear: both;
 
-    img {
 
+    .brand{
+        padding: 0;
+        position: relative;
+        clear: left;
+        
+        img{
+                float: right;        
+            }
+
+        .aklc{
+                position: relative;
+                top: .75em;
+                right: 1em;
+                width: 194px;
+         }
+
+        .libs{
+                position: relative;
+                right: 1.5em;
+                width: 130px;
+                top: 2.33em;
+        }
     }
 }
+
 
 .title {
     color: black;
@@ -345,15 +385,17 @@ a, .navigation a {
     text-align: center;
     text-decoration: none;
     color: white;
-    background-color:  @dk-grey;
-    padding: 0.5em;
+    background-color:  @color-dk-grey;
+    padding: 0.33em;
     line-height:2em;
+    .Transition(all .1s linear);
+
 }
 
 .ButtonHover{
     text-decoration: none;
     color: white;
-    background-color:  @mid-grey;
+    background-color:  @color-aklib-green;
 }
 
 .ControlButtonContainer{
@@ -386,14 +428,96 @@ a.button.back {
      background-color: black;
 }
 
+.Transition (@transition) {
+    -webkit-transition: @transition;  
+    -moz-transition:    @transition;
+    -ms-transition:     @transition; 
+    -o-transition:      @transition;  
+}
 
-/// fixed header /////////////////////////////////////////////////////////////////
+/* Mixin */
+.Transform (@rotate: 90deg, @scale: 1, @skew: 1deg, @translate: 10px) {
+    -webkit-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+    -moz-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+    -o-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+    -ms-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+    transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+}
+
+/* Mixin */
+
+ 
+
+
+
+/// Intro ////////////////////////////////////////////////////////////////////////
+
+.intro{
+    h1, h2 {
+        font-family: ac_blissbold;
+        padding: 0 1em 0 1em;
+            span{
+            font-size: 1.5em;
+        }
+    }
+
+    h1{
+        display: block;
+        position: relative;
+        margin: 0;
+        
+        span {
+            display: none;
+        }
+
+        img{
+           width: 60%;
+           padding: 1em 0 2em 1em;
+           .Transform(-8deg);
+        }
+    } 
+ 
+    .col-1{
+        width: 51%;
+        float: left;
+        padding-left: 3%;
+    }
+
+    p:first-of-type{
+        .FontSizer(22);
+    }
+
+    .col-2{
+        float: right;
+        width: 36%;
+        margin-right: 3%;
+
+        nav {
+
+            a {
+               margin: 0 0 1em 0;
+               display: block;
+               width: 100%;
+               background: grey;
+               height: 10em;
+            }
+        }
+
+    }
+}
+
+
+
+
+
+
+/// Sub page header /////////////////////////////////////////////////////////////////
 
 header{
     height: @header-height;
-    background-color: white;
-    vertical-align: center;
-    
+
+    /* Implementation */
+   
     a.button.back {
         display: none; /// temp
         position: absolute;
@@ -411,7 +535,7 @@ header{
         margin:0;
         padding: 0;
         float: left;
-        line-height: 1em;
+        line-height: 1.5em;
         
         span {
             visibility: hidden;
@@ -421,55 +545,14 @@ header{
             display: block;
             border: none;
             width: 700px;
-            line-height: 120px;
         }
     }   
 
-    .brand{
-        display: block;
-        padding: 20px 20px 0 0;
-        float: right;
-    }
 }
-
-.copy {
-    width: 46%;
-    height:100%;
-    position: fixed;
-    display: block;
-    right: 0;
-    padding-left: 2%;
-    padding-right:2%;
-}
-
-.bg-image{
-    width:50%;
-    height:100%;
-    display: block;
-    position: fixed;
-}
-
-///////////////// home page content ///////////////////////////
-
-h1{
-    display: block;
-    position: relative;
-    margin:0;
-    padding: 0;
-    
-    span {
-        visibility: hidden;
-    }
-
-    img{
-        width: 100%;
-    }
-}   
 
 /* ==========================================================================
 Gallery
 ========================================================================== */
-
 // gallery structure
 
 .gallery{
@@ -480,7 +563,7 @@ Gallery
 // two columns
 
 .ThumbContainer{
-    top:2em;
+    top:.75em;
     width: @nav-width;
     position: relative;
     margin:0;
@@ -489,7 +572,7 @@ Gallery
 }
 
 .Content{
-    top: 2em;
+    top: .75em;
     width: @gal-width;
     position:relative;
     float: right;
@@ -503,19 +586,19 @@ a.trigger{
     position: absolute;
     z-index: 1001;
     right: 0;
-    height: 50px;
+    height: 3em;
     width: @case-nav-width;
     color: white;
-    background-color: @blk-grey;
+    background-color: @color-trans-blk;
     
 
 
-    h3{
-        padding-left: 20px;
-        line-height: .5em;;
+    h4{
+        padding-left: 1.5em;
+        line-height: .5em;
     }
     span{
-        font-size: 1.5em;
+        font-size: 1.66em;
         display: block;
         position: absolute;
         right: .66em;
@@ -535,10 +618,9 @@ a.trigger:hover{
 .case-nav{
     position: absolute;
     z-index: 1000;
-    right: 0;
-    background-color: @blk-grey;
+    background-color: @color-blk-grey;
     width: @case-nav-width;
-    //top:170px;
+    right: 0;
     display: none;
 
     a:link,  a:hover, a:active, a:visited {
@@ -555,32 +637,46 @@ a.trigger:hover{
             padding: .66em 1.5em;
             margin: 0;
             cursor: pointer;
+
+            .Transition(all .1s linear);
         }
 
-        li a{
-             padding-left: 0;
-        }
 
         li.selected{
-            background-color: @lt-grey;
+            background-color: @color-lt-grey;
+            cursor: default;
         }
         
         li:hover{
-            background-color: @mid-grey; 
+            background-color: @color-aklib-green; 
+            color: white;
         }
 
         li:hover a{
-            color: white;
+            color: inherit;
         }
         li.selected a{
-            color: white;
+            color: @color-white;
+            cursor: default;
         }
+
+        li.selected:hover{
+            background-color: @color-lt-grey;
+        }
+
         li a, li:link a,  li:active, li:visited { 
-            color: @white-grey;
+            color:@color-white-grey;
             text-decoration: none;
         }
 
     } 
+
+    
+}
+
+.case-nav{
+    transition: right .1s ease-out;
+    //.Transition(display 1s linear);
 }
 
 .case-nav.expanded{
@@ -630,8 +726,9 @@ a.trigger:hover{
 
         position: relative;
         clear: both;
-        background-color: @dk-grey;
-        background-image: url(@bgimg-felt-black);
+        background-color: @color-dk-grey;
+       // background-image: url(@bg-image-dk1);
+        background-color: rgba(0,0,0,0.4);
         top: 1em;
 
         .loader {
@@ -692,10 +789,8 @@ a.trigger:hover{
 
         .image-caption {
             display: block;
-            position: absolute;
+            position: relative;
             width: @gal-width;
-            top: 0;
-            left: 0;
         }
 
         .caption {
@@ -737,6 +832,7 @@ a.trigger:hover{
     }
     .current {
         .ButtonHover();
+        background-color: @color-lt-grey;
     }
     .ellipsis {
         border: none;
@@ -827,7 +923,13 @@ Fancybox
    Laptop Width
    =============== */
 
-    header{  
+   body{
+    .FontSizer(16);
+   }
+
+    header{ 
+
+        min-width: 980px;
         h1{
             img{
                 width: 600px;
@@ -843,7 +945,7 @@ Fancybox
     }
 
 
-    .main-container{
+    .exhibition .wrapper{
     margin: 0 auto;
    }
 

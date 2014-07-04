@@ -6,54 +6,56 @@ jQuery(document).ready(function($) {
 //page resize functions
 
 var winW, winH, winOH, winOW,
-headerHeight = $('header').height(),
+headerHeight,
+footerHeight,
 $navTrigger = $('a.trigger'),
-triggerHeight = $navTrigger.height(),
-
-winW = window.innerWidth,
-	//console.log(winW);
-winH = window.innerHeight,
-	//console.log(winH);
-winOW = window.outerWidth,
-	//console.log(winOW);
-winOH = window.outerHeight,
-
 narrowMode = 1330;
 
+function winDim(){
+	winW = window.innerWidth;
+	winH = window.innerHeight;
+}
+
 function setMenu(){
+	winDim();
+	triggerHeight = $navTrigger.height(),
+	headerHeight = $('header').height(),
+	footerHeight = $('footer').height();
+	//totalHeight = winH-headerHeight-footerHeight +'px';
 
-	 $('.case-nav').css({'height':winOH-headerHeight-triggerHeight+'px', 'top':headerHeight+triggerHeight+'px'});
+	$('.case-nav').css({ 'top':headerHeight+triggerHeight+'px'});
 
-	var winW = window.innerWidth;
-  	console.log(winW);
 	if(winW <= narrowMode){
 		$('.case-nav').removeClass("expanded");
+		$navTrigger.css({'cursor':'pointer'}).find('span').css('opacity', 1);
+
 	 }else if (winW > narrowMode){
 	 	$('.case-nav').addClass("expanded");
+	 	  	$navTrigger.css({'cursor':'default'}).find('span').css('opacity', 0.2);
 	}
 }
 
-$(window).resize(function() {
-  setMenu();
-
-});
 
 $navTrigger.click(function(e){
 	e.preventDefault();
-	var winW = window.innerWidth;
+	winDim();
 	// only in narrow mode
 	if (winW <= narrowMode){
 
 	    if($('.case-nav').hasClass('expanded')){
 	    	$('.case-nav').removeClass('expanded');
-	     	//$caseNav.css({'display':'none'});
 	     }
 	     else{
 	     	$('.case-nav').addClass('expanded');
-	     	//$caseNav.css({'display':'block'});
+	   
 	     }
 	 }
  });
+
+$(window).resize(function() {
+  setMenu();
+});
+
 
 
 setMenu();

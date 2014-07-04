@@ -2,9 +2,13 @@
 // document.write('<style>.noscript { display: none; }</style>'); add to exhib page
 
 jQuery(document).ready(function($) {
+	//$('.exhibition header').css({'background':'none'});
 
-	$('.bg-image').backstretch("img/BritishArtists.Nash2.jpg");
-	$('.copy').backstretch("img/old.paper.jpg");
+	$('.intro article').backstretch("img/cardbg.jpg");
+	$('.intro').backstretch("img/BritishArtists.Nash2.jpg");
+	
+	//$('.exhibition header').backstretch("img/cardbg.jpg");
+
 
 /****************************************************************************************/
 });
