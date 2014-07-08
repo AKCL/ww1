@@ -5,7 +5,7 @@ jQuery(document).ready(function($) {
 	//$('.exhibition header').css({'background':'none'});
 
 	$('.intro article').backstretch("img/cardbg.jpg");
-	$('.intro').backstretch("img/BritishArtists.Nash2.jpg");
+	$('.intro').backstretch("img/nash-bg.jpg");
 	
 	//$('.exhibition header').backstretch("img/cardbg.jpg");
 

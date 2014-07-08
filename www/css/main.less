@@ -5,7 +5,7 @@ variables
 //dimansions
 @full-width: 100%;
 @min-width: 980px;
-@header-height: 6.5em;
+@header-height: 4.5em;
 
 // links
 @link-color: white;
@@ -290,7 +290,6 @@ body.exhibition{
 
 .exhibition header{
     background-image: url(../img/cardbg.jpg);
-    
     min-wdth: 980px;
 }
 
@@ -543,7 +542,7 @@ header{
         margin:0;
         padding: 0;
         float: left;
-        line-height: 1.5em;
+        line-height: .5em;
         
         span {
             visibility: hidden;
@@ -552,7 +551,7 @@ header{
         img{
             display: block;
             border: none;
-            width: 700px;
+            width: 600px;
         }
     }   
 
@@ -889,9 +888,13 @@ a.trigger:hover{
 
             a.thumb {
                 padding: 0;
-                display: block;
+                display: inline-block;
                 overflow: hidden;
                 height: 125px;
+                width: 125px;
+                text-align:center;
+                position: relative;
+
 
 
                 //border: 1px solid white;
@@ -908,8 +911,12 @@ a.trigger:hover{
 
             img {
                 border: none;
-                display: block;
-                width: 125px;
+                // display: inline;
+                max-height: 100%;
+                -ms-interpolation-mode: bicubic;
+                position:relative;
+                margin: auto; 
+  
             }
         }
     }
@@ -955,7 +962,7 @@ Fancybox
         min-width: 980px;
         h1{
             img{
-                width: 600px;
+                width: 500px;
             }
         }   
           .brand{
