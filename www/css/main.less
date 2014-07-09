@@ -5,7 +5,7 @@ variables
 //dimansions
 @full-width: 100%;
 @min-width: 980px;
-@header-height: 6.5em;
+@header-height: 4.5em;
 
 // links
 @link-color: white;
@@ -33,7 +33,7 @@ variables
 
 
 
-@font-body-color: @color-white-grey;
+
 
 //colors
 
@@ -42,16 +42,21 @@ variables
 @color-dk-grey: #111111;
 @color-mid-grey:#222;
 @color-lt-grey: #333;
-@color-white-grey:#f5f5f5;
+@color-white-grey: #999;
+@color-grey-white:#f5f5f5;
 
 @color-akcl-ltblue: #215584;
 @color-aklib-green: #789931;
+
+// body colors
+@color-body-dark: @color-grey-white;
+@color-body-alt:#313630;
 
 // bg colors
 @color-white: white;
 
 
-@bg-image-dk1: '../img/blackorchid.png';
+@bg-image-dk1: '../img/black_paper.png';
 
 // radius
 
@@ -185,7 +190,7 @@ button,
 input,
 select,
 textarea {
-    color: @font-body-color;
+    color: @color-body-dark;
 }
 
 html {
@@ -261,6 +266,10 @@ h4{
     line-height: 1;
 
 }
+// lord vader hates furry animals
+a, a:link, a:visited, a:hover, a:focus, a:active {
+    outline: none;
+}
 
 
 /* ===== Initializr Styles ==================================================
@@ -276,7 +285,7 @@ body {
 }
 
 body.exhibition{
-    color: @font-body-color;
+    color: @color-body-dark;
     background-image:url(@bg-image-dk1);
 }
 
@@ -543,7 +552,7 @@ header{
         margin:0;
         padding: 0;
         float: left;
-        line-height: 1.5em;
+        line-height: .5em;
         
         span {
             visibility: hidden;
@@ -552,9 +561,21 @@ header{
         img{
             display: block;
             border: none;
-            width: 700px;
+            width: 600px;
         }
-    }   
+    } 
+
+    h2 {
+        .FontSizer(14);
+        color: @color-body-alt;
+        line-height: 1.2;
+        float: right;
+        margin: .66em 1em 0 0;
+
+        span{
+            .FontSizer(16);
+        }
+    } 
 
 }
 
@@ -603,7 +624,7 @@ a.trigger{
 
     h4{
         padding-left: 1.5em;
-        line-height: .5em;
+        line-height: 0;
     }
     span{
         font-size: 1.66em;
@@ -618,7 +639,7 @@ a.trigger{
 
 
 a.trigger:hover{
-    color: white;
+    color: @color-white;
 }
 
 
@@ -649,15 +670,15 @@ a.trigger:hover{
             .Transition(all .1s linear);
         }
 
-
-        li.selected{
-            background-color: @color-lt-grey;
-            cursor: default;
-        }
         
         li:hover{
+            background-color: @color-lt-grey;
+            color: @color-white;
+        }
+        li.selected, li.selected:hover{
             background-color: @color-aklib-green; 
-            color: white;
+            color: @color-white;
+            cursor: default;
         }
 
         li:hover a{
@@ -668,12 +689,9 @@ a.trigger:hover{
             cursor: default;
         }
 
-        li.selected:hover{
-            background-color: @color-lt-grey;
-        }
 
         li a, li:link a,  li:active, li:visited { 
-            color:@color-white-grey;
+            color:@color-grey-white;
             text-decoration: none;
         }
 
@@ -683,7 +701,7 @@ a.trigger:hover{
 }
 
 .case-nav{
-    transition: right .1s ease-out;
+    //transition: opacity .2s ease-out;
     //.Transition(display 1s linear);
 }
 
@@ -786,11 +804,11 @@ a.trigger:hover{
 
 
     .caption-container {
-        margin: 2em 0;
+        margin: 2em 0 3em 0;
         position: relative;
 
         .photo-index {
-            color: #888;
+            color: @color-white-grey;
             //display: block; 
         // have no idea where this is coming from
         }
@@ -807,14 +825,22 @@ a.trigger:hover{
 
         .image-title {
             font-weight: bold;
-            font-size: 2em;
+            .FontSizer(24);
         }
 
+<<<<<<< HEAD
         .image-desc {
             .FontSizer(16);
             padding: 1em 0 3em 0;
 
             span[title="Photo reference"] {
+=======
+        .image-desc{
+                .FontSizer(14);
+                color:@color-white-grey;
+
+                span[title="Photo reference"] {
+>>>>>>> origin/master
                 font-style: italic;
                 color:@color-aklib-green;
 
@@ -823,11 +849,22 @@ a.trigger:hover{
                 }
 
             }
+<<<<<<< HEAD
+=======
+        }
+>>>>>>> origin/master
+
+        .image-desc, .label {
+
+            padding: 1em 0 1em 0;
+
+            
 
         .download {
         float: right;
         display: none;
         }
+
 
     } // end of .caption-container
 
@@ -883,18 +920,39 @@ a.trigger:hover{
                 float: left;
                 padding: 0;
                 list-style: none;
+<<<<<<< HEAD
                 background: white;
 
+=======
+                display: block;
+                overflow: hidden;
+                height: 125px;
+                width: 125px;
+                background: none;
+>>>>>>> origin/master
             }
 
             a.thumb {
+                background: white;
+                position: relative;
+                overflow: hidden;
                 padding: 0;
                 display: block;
+<<<<<<< HEAD
                 overflow: hidden;
                 height: 125px;
 
 
                 //border: 1px solid white;
+=======
+                width: 124px; // to create a faux border
+                height: 124px; // to create a faux border
+                top: 0;
+                left: 0;
+                text-align:center;
+
+               //border: 1px solid white;
+>>>>>>> origin/master
             }
 
             .selected a.thumb {
@@ -907,9 +965,10 @@ a.trigger:hover{
             }
 
             img {
-                border: none;
-                display: block;
-                width: 125px;
+                display: inline-block;
+                margin: 0 auto;
+                max-width: 100%;
+  
             }
         }
     }
@@ -955,7 +1014,7 @@ Fancybox
         min-width: 980px;
         h1{
             img{
-                width: 600px;
+                width: 500px;
             }
         }   
           .brand{
@@ -971,6 +1030,10 @@ Fancybox
     .exhibition .wrapper{
     margin: 0 auto;
    }
+
+     a.trigger:hover{
+        color: @color-aklib-green;
+    }
 
 }
 
@@ -1235,7 +1298,7 @@ Fancybox
         widows: 3;
     }
 
-    h2,  h3 {
+    h2, h3 {
         page-break-after: avoid;
     }
 }

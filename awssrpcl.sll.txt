@@ -1,0 +1,212 @@
+﻿Merge remote-tracking branch 'origin/master'
+
+Conflicts:
+	www/at-sea.html
+	www/css/main.css
+	www/css/main.less
+	www/exhibition.html
+	www/introduction.html
+	www/samoa.html
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch and 'origin/master' have diverged,
+# and have 1 and 4 different commits each, respectively.
+#   (use "git pull" to merge the remote branch into yours)
+#
+# All conflicts fixed but you are still merging.
+#   (use "git commit" to conclude merge)
+#
+# Changes to be committed:
+#
+#	modified:   www/about.html
+#	modified:   www/apple-touch-icon-precomposed.png
+#	renamed:    www/case10.html -> www/at-sea.html
+#	deleted:    www/case7.html
+#	deleted:    www/case9.html
+#	modified:   www/css/caption.png
+#	modified:   www/css/jush.css
+#	modified:   www/css/loader.gif
+#	modified:   www/css/loaderWhite.gif
+#	modified:   www/css/main.css
+#	modified:   www/css/main.less
+#	modified:   www/css/nextPageArrow.gif
+#	modified:   www/css/nextPageArrowWhite.gif
+#	modified:   www/css/normalize.css
+#	modified:   www/css/normalize.min.css
+#	modified:   www/css/prevPageArrow.gif
+#	modified:   www/css/prevPageArrowWhite.gif
+#	modified:   www/css/white.css
+#	modified:   www/exhibition.html
+#	new file:   www/exhibition/gallipoli/1277-1-thumb.jpg
+#	new file:   www/exhibition/gallipoli/1277-1.jpg
+#	new file:   www/exhibition/gallipoli/5426-thumb.jpg
+#	new file:   www/exhibition/gallipoli/5426.jpg
+#	new file:   www/exhibition/gallipoli/5484-thumb.jpg
+#	new file:   www/exhibition/gallipoli/5484.jpg
+#	new file:   www/exhibition/gallipoli/5532-thumb.jpg
+#	new file:   www/exhibition/gallipoli/5532.jpg
+#	new file:   www/exhibition/gallipoli/Moore-Jones.1916-thumb.jpg
+#	new file:   www/exhibition/gallipoli/Moore-Jones.1916.jpg
+#	new file:   www/exhibition/gallipoli/NZMS531Box5p1-thumb.jpg
+#	new file:   www/exhibition/gallipoli/NZMS531Box5p1.jpg
+#	new file:   www/exhibition/gallipoli/NZMS531Box5p2-thumb.jpg
+#	new file:   www/exhibition/gallipoli/NZMS531Box5p2.jpg
+#	new file:   www/exhibition/gallipoli/NZMS531Box5p3-thumb.jpg
+#	new file:   www/exhibition/gallipoli/NZMS531Box5p3.jpg
+#	new file:   www/exhibition/gallipoli/NZMS531Box5p4-thumb.jpg
+#	new file:   www/exhibition/gallipoli/NZMS531Box5p4.jpg
+#	new file:   www/exhibition/gallipoli/NZMS531Box5p5-thumb.jpg
+#	new file:   www/exhibition/gallipoli/NZMS531Box5p5.jpg
+#	new file:   www/exhibition/gallipoli/NZMS531Box5p6-thumb.jpg
+#	new file:   www/exhibition/gallipoli/NZMS531Box5p6.jpg
+#	new file:   www/exhibition/gallipoli/Silas.1916.QuinnsPost-thumb.jpg
+#	new file:   www/exhibition/gallipoli/Silas.1916.QuinnsPost.jpg
+#	new file:   www/exhibition/gallipoli/Wilkinson.1916Plate13-thumb.jpg
+#	new file:   www/exhibition/gallipoli/Wilkinson.1916Plate13.jpg
+#	new file:   www/exhibition/introduction/AWN8.4.1915p45.jpg
+#	new file:   www/exhibition/introduction/Eph.War.AnzacDay1916.Merged-thumb.jpg
+#	new file:   www/exhibition/introduction/Eph.War.AnzacDay1916.Merged.jpg
+#	new file:   www/exhibition/introduction/NZMS1212.Diary.jpg
+#	new file:   www/exhibition/introduction/NZMS1387KeepTheFlag-thumb.jpg
+#	new file:   www/exhibition/introduction/NZMS1387KeepTheFlag.jpg
+#	new file:   www/exhibition/introduction/NZObserver5.1.1918p5-thumb.jpg
+#	new file:   www/exhibition/introduction/NZObserver5.1.1918p5.jpg
+#	new file:   www/exhibition/palestine-and-egypt/1191-10-thumb.jpg
+#	new file:   www/exhibition/palestine-and-egypt/1191-10.jpg
+#	new file:   www/exhibition/palestine-and-egypt/1191-12-thumb.jpg
+#	new file:   www/exhibition/palestine-and-egypt/1191-12.jpg
+#	new file:   www/exhibition/palestine-and-egypt/1191-4-thumb.jpg
+#	new file:   www/exhibition/palestine-and-egypt/1191-4.jpg
+#	new file:   www/exhibition/palestine-and-egypt/1191-5-thumb.jpg
+#	new file:   www/exhibition/palestine-and-egypt/1191-5.jpg
+#	new file:   www/exhibition/palestine-and-egypt/AustInPalestine.1919p77-thumb.jpg
+#	new file:   www/exhibition/palestine-and-egypt/AustInPalestine.1919p77.jpg
+#	new file:   www/exhibition/palestine-and-egypt/AustInPalestine.1919p78i-thumb.jpg
+#	new file:   www/exhibition/palestine-and-egypt/AustInPalestine.1919p78i.jpg
+#	new file:   www/exhibition/palestine-and-egypt/AustInPalestine.1919p78ii-thumb.jpg
+#	new file:   www/exhibition/palestine-and-egypt/AustInPalestine.1919p78ii.jpg
+#	new file:   www/exhibition/palestine-and-egypt/NZMap8064-thumb.jpg
+#	new file:   www/exhibition/palestine-and-egypt/NZMap8064.jpg
+#	new file:   www/exhibition/palestine-and-egypt/NZMap8064CU1-thumb.jpg
+#	new file:   www/exhibition/palestine-and-egypt/NZMap8064CU1.jpg
+#	new file:   www/exhibition/palestine-and-egypt/NZMap8064CU2-thumb.jpg
+#	new file:   www/exhibition/palestine-and-egypt/NZMap8064CU2.jpg
+#	new file:   www/exhibition/samoa/AWN17.9.1914pg43-thumb.jpg
+#	new file:   www/exhibition/samoa/AWN17.9.1914pg43.jpg
+#	new file:   www/exhibition/samoa/AWN24.9.1914pg44-thumb.jpg
+#	new file:   www/exhibition/samoa/AWN24.9.1914pg44.jpg
+#	new file:   www/exhibition/samoa/AWN8.4.1915p45-thumb.jpg
+#	new file:   www/exhibition/samoa/AWN8.4.1915p45.jpg
+#	new file:   www/exhibition/samoa/Proclamations.1916-19Pg1-thumb.jpg
+#	new file:   www/exhibition/samoa/Proclamations.1916-19Pg1.jpg
+#	new file:   www/exhibition/samoa/Proclamations.1916-19Pg2-thumb.jpg
+#	new file:   www/exhibition/samoa/Proclamations.1916-19Pg2.jpg
+#	new file:   www/exhibition/samoa/Proclamations.1916-19Pg3-thumb.jpg
+#	new file:   www/exhibition/samoa/Proclamations.1916-19Pg3.jpg
+#	new file:   www/exhibition/samoa/Proclamations.1916-19Pg4a-thumb.jpg
+#	new file:   www/exhibition/samoa/Proclamations.1916-19Pg4a.jpg
+#	new file:   www/exhibition/samoa/Proclamations.1916-19Pg4b-thumb.jpg
+#	new file:   www/exhibition/samoa/Proclamations.1916-19Pg4b.jpg
+#	new file:   www/exhibition/samoa/SamoaExpForce.1924p10-11-thumb.jpg
+#	new file:   www/exhibition/samoa/SamoaExpForce.1924p10-11.jpg
+#	new file:   www/exhibition/western-front/JPEG/NZMS1212.Diary.jpg
+#	new file:   www/exhibition/western-front/JPEG/NotesOn.1917p16-17.jpg
+#	new file:   www/exhibition/western-front/JPEG/Salvage.Boyd.1918.jpg
+#	new file:   www/exhibition/western-front/JPEG/Somme.Vol1.1919p30-31.jpg
+#	new file:   www/exhibition/western-front/JPEG/Sphere5.8.1916p116-117.jpg
+#	new file:   www/exhibition/western-front/JPEG/WesternFront.Bone.1917Plate31.jpg
+#	new file:   www/exhibition/western-front/JPEG/thumbs/.BridgeSort
+#	new file:   www/exhibition/western-front/JPEG/thumbs/NZMS1212.Diary-thumb
+#	new file:   www/exhibition/western-front/JPEG/thumbs/NotesOn.1917p16-17-thumb
+#	new file:   www/exhibition/western-front/JPEG/thumbs/Salvage.Boyd.1918-thumb
+#	new file:   www/exhibition/western-front/JPEG/thumbs/Somme.Vol1.1919p30-31-thumb
+#	new file:   www/exhibition/western-front/JPEG/thumbs/Sphere5.8.1916p116-117-thumb
+#	new file:   www/exhibition/western-front/JPEG/thumbs/WesternFront.Bone.1917Plate31-thumb
+#	modified:   www/favicon.ico
+#	modified:   www/fonts/acbliss-bold-webfont.eot
+#	modified:   www/fonts/acbliss-bold-webfont.svg
+#	modified:   www/fonts/acbliss-bold-webfont.ttf
+#	modified:   www/fonts/acbliss-bold-webfont.woff
+#	modified:   www/fonts/acbliss-light-webfont.eot
+#	modified:   www/fonts/acbliss-light-webfont.svg
+#	modified:   www/fonts/acbliss-light-webfont.ttf
+#	modified:   www/fonts/acbliss-light-webfont.woff
+#	modified:   www/fonts/acbliss-medium-webfont.eot
+#	modified:   www/fonts/acbliss-medium-webfont.svg
+#	modified:   www/fonts/acbliss-medium-webfont.ttf
+#	modified:   www/fonts/acbliss-medium-webfont.woff
+#	modified:   www/fonts/icomoon.eot
+#	modified:   www/fonts/icomoon.svg
+#	modified:   www/fonts/icomoon.ttf
+#	modified:   www/fonts/icomoon.woff
+#	new file:   www/gallipoli.html
+#	modified:   www/img/BritishArtists.Nash2.jpg
+#	modified:   www/img/ac-logo.jpg
+#	modified:   www/img/aklc-png-med.png
+#	modified:   www/img/aklibs-png-med.png
+#	modified:   www/img/black_lozenge.png
+#	modified:   www/img/black_paper.png
+#	modified:   www/img/blackorchid.png
+#	modified:   www/img/cardbg.jpg
+#	modified:   www/img/dark_leather.png
+#	modified:   www/img/itllbeoverbyxmas.png
+#	modified:   www/img/menu.svg
+#	new file:   www/img/nash-bg.jpg
+#	modified:   www/img/nz_govt.jpg
+#	modified:   www/img/oldpaper.jpg
+#	modified:   www/img/overbyxmas.png
+#	modified:   www/img/skewed_print.png
+#	modified:   www/img/zwartevilt.png
+#	modified:   www/img/zwartevilt_@2X.jpg
+#	modified:   www/index.html
+#	modified:   www/index_old.html
+#	modified:   www/introduction.html
+#	modified:   www/js/backstretch.js
+#	modified:   www/js/custom.js
+#	modified:   www/js/exhibition.js
+#	modified:   www/js/main.js
+#	modified:   www/js/test.js
+#	modified:   www/js/timeline.js
+#	modified:   www/js/vendor/jquery-1.11.0.min.js
+#	modified:   www/js/vendor/jquery-migrate-1.2.1.min.js
+#	modified:   www/js/vendor/jquery.galleriffic.js
+#	modified:   www/js/vendor/jquery.history.js
+#	modified:   www/js/vendor/jquery.opacityrollover.js
+#	modified:   www/js/vendor/jush.js
+#	modified:   www/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js
+#	renamed:    www/case11.html -> www/maori-pacific.html
+#	new file:   www/palestine-and-egypt.html
+#	renamed:    www/case3.html -> www/percival-morganti.html
+#	renamed:    www/case12.html -> www/recruitment.html
+#	renamed:    www/case5.html -> www/rehabilitation.html
+#	modified:   www/samoa.html
+#	renamed:    www/case4.html -> www/soldiers-writing.html
+#	modified:   www/source/blank.gif
+#	modified:   www/source/fancybox_loading.gif
+#	modified:   www/source/fancybox_loading@2x.gif
+#	modified:   www/source/fancybox_overlay.png
+#	modified:   www/source/fancybox_sprite.png
+#	modified:   www/source/fancybox_sprite@2x.png
+#	modified:   www/source/helpers/fancybox_buttons.png
+#	modified:   www/source/helpers/jquery.fancybox-buttons.css
+#	modified:   www/source/helpers/jquery.fancybox-buttons.js
+#	modified:   www/source/helpers/jquery.fancybox-media.js
+#	modified:   www/source/helpers/jquery.fancybox-thumbs.css
+#	modified:   www/source/helpers/jquery.fancybox-thumbs.js
+#	modified:   www/source/jquery.fancybox.css
+#	modified:   www/source/jquery.fancybox.js
+#	modified:   www/source/jquery.fancybox.pack.js
+#	modified:   www/timeline.html
+#	modified:   www/timeline/events.js
+#	renamed:    www/case6.html -> www/western-europe-war-map.html
+#	renamed:    www/case8.html -> www/western-front-1.html
+#
+
