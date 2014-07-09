@@ -33,7 +33,7 @@ variables
 
 
 
-@font-body-color: @color-grey-white;
+
 
 //colors
 
@@ -47,6 +47,10 @@ variables
 
 @color-akcl-ltblue: #215584;
 @color-aklib-green: #789931;
+
+// body colors
+@color-body-dark: @color-grey-white;
+@color-body-alt:#313630;
 
 // bg colors
 @color-white: white;
@@ -186,7 +190,7 @@ button,
 input,
 select,
 textarea {
-    color: @font-body-color;
+    color: @color-body-dark;
 }
 
 html {
@@ -281,7 +285,7 @@ body {
 }
 
 body.exhibition{
-    color: @font-body-color;
+    color: @color-body-dark;
     background-image:url(@bg-image-dk1);
 }
 
@@ -558,7 +562,19 @@ header{
             border: none;
             width: 600px;
         }
-    }   
+    } 
+
+    h2 {
+        .FontSizer(14);
+        color: @color-body-alt;
+        line-height: 1.2;
+        float: right;
+        margin: .66em 1em 0 0;
+
+        span{
+            .FontSizer(16);
+        }
+    } 
 
 }
 
@@ -607,7 +623,7 @@ a.trigger{
 
     h4{
         padding-left: 1.5em;
-        line-height: .5em;
+        line-height: 0;
     }
     span{
         font-size: 1.66em;
@@ -622,7 +638,7 @@ a.trigger{
 
 
 a.trigger:hover{
-    color: white;
+    color: @color-white;
 }
 
 
@@ -653,15 +669,15 @@ a.trigger:hover{
             .Transition(all .1s linear);
         }
 
-
-        li.selected{
-            background-color: @color-lt-grey;
-            cursor: default;
-        }
         
         li:hover{
+            background-color: @color-lt-grey;
+            color: @color-white;
+        }
+        li.selected, li.selected:hover{
             background-color: @color-aklib-green; 
-            color: white;
+            color: @color-white;
+            cursor: default;
         }
 
         li:hover a{
@@ -672,9 +688,6 @@ a.trigger:hover{
             cursor: default;
         }
 
-        li.selected:hover{
-            background-color: @color-lt-grey;
-        }
 
         li a, li:link a,  li:active, li:visited { 
             color:@color-grey-white;
@@ -687,7 +700,7 @@ a.trigger:hover{
 }
 
 .case-nav{
-    transition: right .1s ease-out;
+    //transition: opacity .2s ease-out;
     //.Transition(display 1s linear);
 }
 
@@ -992,6 +1005,10 @@ Fancybox
     .exhibition .wrapper{
     margin: 0 auto;
    }
+
+     a.trigger:hover{
+        color: @color-aklib-green;
+    }
 
 }
 
