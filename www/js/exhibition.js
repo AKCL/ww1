@@ -165,11 +165,11 @@ function ig(){
 	}
 	// deals with initial load
 	else {
-		getContent("case1.html"); // or load first item or initialURL
+		getContent("introduction.html"); // or load first item or initialURL
 		
 		if(Modernizr.history){
 			//alert("history");
-			history.replaceState('', '', '#case1'); // or relace with first hash
+			history.replaceState('', '', '#introduction'); // or relace with first hash
 		}
 	}
 	
