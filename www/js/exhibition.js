@@ -173,19 +173,34 @@ function ig(){
 		}
 	}
 	
+	$('.case-nav li').click(function(e){
 
-	$(document).on("click", ".case-nav li", function(e) {
 		e.preventDefault();
 		var ajaxSrc = $(this).find('a').attr("href"),
 		hash = "#"+ajaxSrc.split(".")[0];
 
+		$('.slideshow').empty(); // unload the slideshow
+		$ajaxDest.empty(); // unload the container
 	   	getContent(ajaxSrc);
 
 	   	if (Modernizr.history) {
 	   		history.pushState('','', hash);
 	   }
-	   return false;
-	}); //  end case-nav ajax
+	});
+
+
+	// $(document).on("click", ".case-nav li", function(e) {
+	// 	e.preventDefault();
+	// 	var ajaxSrc = $(this).find('a').attr("href"),
+	// 	hash = "#"+ajaxSrc.split(".")[0];
+
+	//    	getContent(ajaxSrc);
+
+	//    	if (Modernizr.history) {
+	//    		history.pushState('','', hash);
+	//    }
+	//    return false;
+	// }); //  end case-nav ajax
 
 		//console.log(initialURL);
 
@@ -198,16 +213,13 @@ function ig(){
 	function getContent(ajaxSrc){
 
 		//console.log(window.history);
-		$ajaxDest.empty(); // unload the container
+	
 		$ajaxDest.load(ajaxSrc, function(){
 		  	ig();  // initialise gallery
 			$caseNav.removeClass('selected');
 			$(".case-nav a[href$='" + ajaxSrc + "']").parent().addClass('selected');
 			var title = $(".case-nav a[href$='" + ajaxSrc + "']").attr("title");
-			$galleryHeading.html(title);
-			console.log(ajaxSrc.indexOf(document.domain));
-			console.log(ajaxSrc.indexOf(':'));
-		  	
+			$galleryHeading.html(title);	  	
 		});
 	}
 
