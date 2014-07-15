@@ -1,19 +1,22 @@
-// custom.js
-document.write('<style>.noscript { display: none; }</style>');
+
+// document.write('<style>.noscript { display: none; }</style>');
 
 jQuery(document).ready(function($) {
 
 //page resize functions
 
-var winW, winH, winOH, winOW,
+var winW, winH,
 headerHeight,
 footerHeight,
+navTotalHeight,
+$caseNav=$('.case-nav'),
 $navTrigger = $('a.trigger'),
 narrowMode = 1330;
 
 function winDim(){
-	winW = window.innerWidth;
-	winH = window.innerHeight;
+	winW = $(window).innerWidth();
+	winH = $(window).height();
+	console.log(winH);
 }
 
 function setMenu(){
@@ -21,41 +24,72 @@ function setMenu(){
 	triggerHeight = $navTrigger.height(),
 	headerHeight = $('header').height(),
 	footerHeight = $('footer').height();
-	//totalHeight = winH-headerHeight-footerHeight +'px';
+	//navTotalHeight = winH-headerHeight-footerheight +'px';
 
-	$('.case-nav').css({ 'top':headerHeight+triggerHeight+'px'});
+	$caseNav.css({'top':headerHeight+'px'});
 
 	if(winW <= narrowMode){
-		$('.case-nav').removeClass("expanded");
+		$caseNav.removeClass("expanded");
 		$navTrigger.css({'cursor':'pointer'}).find('span').css('opacity', 1);
 
 	 }else if (winW > narrowMode){
-	 	$('.case-nav').addClass("expanded");
+	 	$caseNav.addClass("expanded");
 	 	  	$navTrigger.css({'cursor':'default'}).find('span').css('opacity', 0.2);
 	}
 }
 
+//{
+	
+	$caseNav.hover(
+	  function() {
+	  	if (winW <= narrowMode){
+	    	$(this).addClass('expanded');
+	  		}
+	  }, function() {
+	    if (winW <= narrowMode){
+	    	$(this).removeClass('expanded');
+	  		}
+	  }
+	);
+//}
 
-$navTrigger.click(function(e){
-	e.preventDefault();
-	winDim();
-	// only in narrow mode
-	if (winW <= narrowMode){
+// $navTrigger.( "click", function(event) {
+//   event.stopPropagation();
+// 	event.preventDefault();
+// 	winDim();
+// 	//console.log(winW);
+// 	//$caseNav.addClass('expanded');
+// 	// only in narrow mode
+	
+// 	    if($caseNav.hasClass('expanded')){
+	    	
+// 	     }
+// 	     else{
+	     	
+// 	     }
+// 	 }	
+// });
 
-	    if($('.case-nav').hasClass('expanded')){
-	    	$('.case-nav').removeClass('expanded');
-	     }
-	     else{
-	     	$('.case-nav').addClass('expanded');
-	   
-	     }
-	 }
- });
+// $navTrigger.on( "click", function(event) {
+//   event.stopPropagation();
+// 	event.preventDefault();
+// 	winDim();
+// 	//console.log(winW);
+// 	//$caseNav.addClass('expanded');
+// 	// only in narrow mode
+// 	if (winW <= narrowMode){
+// 	    if($caseNav.hasClass('expanded')){
+// 	    	$caseNav.removeClass('expanded');
+// 	     }
+// 	     else{
+// 	     	$caseNav.addClass('expanded');
+// 	     }
+// 	 }	
+// });
 
 $(window).resize(function() {
   setMenu();
 });
-
 
 
 setMenu();
@@ -152,7 +186,7 @@ function ig(){
 	var $ajaxDest = $('.thumbs'),
 	$ajaxSrc,
 	$galleryHeading = $('.gallery h2'),
-	$caseNav = $('.case-nav li');
+	$caseBtn = $('.case-nav li');
 
 	// initialise page
 
@@ -217,7 +251,7 @@ function ig(){
 	
 		$ajaxDest.load(ajaxSrc, function(){
 		  	ig();  // initialise gallery
-			$caseNav.removeClass('selected');
+			$caseBtn.removeClass('selected');
 			$(".case-nav a[href$='" + ajaxSrc + "']").parent().addClass('selected');
 			var title = $(".case-nav a[href$='" + ajaxSrc + "']").attr("title");
 			$galleryHeading.html(title);	  	
