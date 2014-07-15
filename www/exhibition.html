@@ -22,6 +22,8 @@
     <link rel="stylesheet" type="text/css" href="source/jquery.fancybox.css?v=2.1.5" media="screen" />
     <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 
+    <link rel="stylesheet" href="source/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
+
 </head>
 <body class="exhibition">
     <!--[if lt IE 8]>
@@ -108,21 +110,23 @@
 <script src="js/vendor/jquery.galleriffic.js"></script>
 
 <script type="text/javascript" src="source/jquery.fancybox.js?v=2.1.5"></script>
+<script type="text/javascript" src="source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+
 
 <script type="text/javascript">
     $(document).ready(function() {
 
         $(".fancybox").fancybox({
             wrapCSS    : 'fancybox-custom',
+            loop: false,
             closeClick : true,
 
             openEffect : 'fade',
 
             helpers : {
-                title : {
-                    type : 'over'
-                },
-                overlay : {
+                title : { type : 'over' },
+                 buttons: { tpl: '<div id="fancybox-buttons" class="top"><ul><li><a class="btnToggle" title="Toggle size" href="javascript:;"></a></li><li><a class="btnClose" title="Close" href="javascript:;"></a></li></ul></div>' },
+                 overlay : {
                     showEarly: 'true',
                     css : {
                         'background' : 'rgba(0,0,0,0.85)'

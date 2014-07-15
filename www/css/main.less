@@ -359,9 +359,9 @@ footer{
 
 
 
-/*/////////////////////////////////////
-Anchors and buttons
-//////////////////////////////////////*/
+/////////////////////////////////////////////////////////////////////////////
+// @links and buttons ////
+/////////////////////////////////////////////////////////////////////////////
 
 a:focus,  a:hover,  a:active {
    text-decoration: none;
@@ -399,7 +399,7 @@ a, .navigation a {
 .ButtonHover{
     text-decoration: none;
     color: white;
-    background-color:  @color-aklib-green;
+    background-color:  @color-lt-grey;
 }
 
 .ControlButtonContainer{
@@ -458,8 +458,9 @@ a.button.back {
  
 
 
-
-/// Intro ////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+// @intro ////
+/////////////////////////////////////////////////////////////////////////////
 
 .intro{
     h1, h2 {
@@ -520,7 +521,9 @@ a.button.back {
 
 
 
-/// Sub page header /////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+// @header ////
+/////////////////////////////////////////////////////////////////////////////
 
 header{
     height: @header-height;
@@ -572,9 +575,10 @@ header{
 
 }
 
-/* ==========================================================================
-Gallery
-========================================================================== */
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// @gallery //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 // gallery structure
 
 .gallery{
@@ -602,10 +606,9 @@ Gallery
 
 }
 
-// case navigation //
-
-
-
+/////////////////////////////////////////////////////////////////////////////
+// @case navigation ////
+/////////////////////////////////////////////////////////////////////////////
 
 .case-nav{
     position: absolute;
@@ -613,18 +616,24 @@ Gallery
     background-color: @color-blk-grey;
     width: @case-nav-width;
     right: 0;
+    height: 3em;
+    overflow: hidden;
 
 
     a.trigger{
         display: block;
-        height: 1.75em;
+        height: 3em;
         width: @case-nav-width;
         color: white;
         background-color: @color-blk-grey;
+        .Transition(all .2s linear);
+
 
         h4{
-            padding-left: 1.5em;
-            line-height: 0;
+            padding-left: 1em;
+            margin:0;
+            line-height: 2.5em;
+
         }
 
         span{
@@ -635,29 +644,30 @@ Gallery
             top: .4em;
         }
     }
-
-
+    
     a.trigger:hover{
-        color: @color-white;
+        .ButtonHover();
     }
 
     a:link,  a:hover, a:active, a:visited {
         text-decoration: none;
     }
+    
 
     ul{
         width: 100%;
         list-style: none;
         padding: 0;
         margin: 0;
-        display: none;
+        opacity: 0;
+        .Transition(opacity .2s linear);
+        
         
         li {
             padding: .66em 1.5em;
             margin: 0;
             cursor: pointer;
-
-            .Transition(all .1s linear);
+            .Transition(all .2s linear);
         }
 
         
@@ -684,31 +694,41 @@ Gallery
             color:@color-grey-white;
             text-decoration: none;
         }
-    } 
+       
+    }
+    
+    &:hover {
+        height: auto;
+        overflow:visible;
+    }
+
+    &:hover ul{
+        opacity: 1;
+    }
 }
 
+.case-nav.expanded{
+    height: auto;
+    overflow: visible;
 
-    .case-nav.expanded ul{
-        display: block;
+    a.trigger:hover{
+        background: none;
     }
+
+    ul{
+        opacity: 1;
+    }
+}
+
 
 .lt-ie9 .case-nav .trigger span{
     background:url(../img/list.png) no-repeat;
-    //transition: opacity .2s ease-out;
-    //.Transition(display 1s linear);
+
 }
 
-// if using scroll box for thumbs
-
-// .navigation {
-//     a.prev {
-//         background-image: url(prevPageArrowWhite.gif);
-//     }
-//     a.next {
-//         background-image: url(nextPageArrowWhite.gif);
-//     } 
-// }
-
+/////////////////////////////////////////////////////////////////////////////
+// @gallery @content ////
+/////////////////////////////////////////////////////////////////////////////
 
 .content {
     /* The display of content is enabled using jQuery so that the slideshow content won't display unless javascript is enabled. */
@@ -849,7 +869,13 @@ Gallery
 
 } // end of .content gallery styles
 
-///// pagination mixins
+
+.fancybox-skin .fancybox-close{
+    display: none;
+}
+/////////////////////////////////////////////////////////////////////////////
+// @thumbnails ////
+/////////////////////////////////////////////////////////////////////////////
 
 .Pagination{
     clear: both;
@@ -865,7 +891,7 @@ Gallery
     }
     .current {
         .ButtonHover();
-        background-color: @color-lt-grey;
+        background-color: @color-aklib-green;
     }
     .ellipsis {
         border: none;

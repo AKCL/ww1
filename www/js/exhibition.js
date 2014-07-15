@@ -5,52 +5,55 @@ jQuery(document).ready(function($) {
 
 //page resize functions
 
-var winW, winH,
-headerHeight,
+var headerHeight,
 footerHeight,
 navTotalHeight,
 $caseNav=$('.case-nav'),
 $navTrigger = $('a.trigger'),
 narrowMode = 1330;
 
-function winDim(){
-	winW = $(window).innerWidth();
-	winH = $(window).height();
-	console.log(winH);
+function viewport() {
+    var e = window, a = 'inner';
+    if (!('innerWidth' in window )) {
+        a = 'client';
+        e = document.documentElement || document.body;
+    }
+    return { width : e[ a+'Width' ] , height : e[ a+'Height' ] };
 }
 
 function setMenu(){
-	winDim();
 	triggerHeight = $navTrigger.height(),
 	headerHeight = $('header').height(),
 	footerHeight = $('footer').height();
-	//navTotalHeight = winH-headerHeight-footerheight +'px';
+	//navTotalHeight = viewport().height;
+	//console.log(viewport().height);
 
 	$caseNav.css({'top':headerHeight+'px'});
 
-	if(winW <= narrowMode){
+	// show/hide nav depending on screen width
+	if(viewport().width <= narrowMode){
 		$caseNav.removeClass("expanded");
 		$navTrigger.css({'cursor':'pointer'}).find('span').css('opacity', 1);
 
-	 }else if (winW > narrowMode){
+	 }else if (viewport().width > narrowMode){
 	 	$caseNav.addClass("expanded");
-	 	  	$navTrigger.css({'cursor':'default'}).find('span').css('opacity', 0.2);
+	 	$navTrigger.css({'cursor':'default'}).find('span').css('opacity', 0.2);
 	}
 }
 
 //{
 	
-	$caseNav.hover(
-	  function() {
-	  	if (winW <= narrowMode){
-	    	$(this).addClass('expanded');
-	  		}
-	  }, function() {
-	    if (winW <= narrowMode){
-	    	$(this).removeClass('expanded');
-	  		}
-	  }
-	);
+	// $caseNav.hover(
+	//   function() {
+	//   	if (winW <= narrowMode){
+	//     	$(this).addClass('expanded');
+	//   		}
+	//   }, function() {
+	//     if (winW <= narrowMode){
+	//     	$(this).removeClass('expanded');
+	//   		}
+	//   }
+	// );
 //}
 
 // $navTrigger.( "click", function(event) {
