@@ -180,6 +180,7 @@ function ig(){
 		hash = "#"+ajaxSrc.split(".")[0];
 
 		$('.slideshow').empty(); // unload the slideshow
+		$('.image-caption').remove(); // unload the slideshow
 		$ajaxDest.empty(); // unload the container
 	   	getContent(ajaxSrc);
 
