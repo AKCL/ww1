@@ -41,54 +41,7 @@ function setMenu(){
 	}
 }
 
-//{
-	
-	// $caseNav.hover(
-	//   function() {
-	//   	if (winW <= narrowMode){
-	//     	$(this).addClass('expanded');
-	//   		}
-	//   }, function() {
-	//     if (winW <= narrowMode){
-	//     	$(this).removeClass('expanded');
-	//   		}
-	//   }
-	// );
-//}
 
-// $navTrigger.( "click", function(event) {
-//   event.stopPropagation();
-// 	event.preventDefault();
-// 	winDim();
-// 	//console.log(winW);
-// 	//$caseNav.addClass('expanded');
-// 	// only in narrow mode
-	
-// 	    if($caseNav.hasClass('expanded')){
-	    	
-// 	     }
-// 	     else{
-	     	
-// 	     }
-// 	 }	
-// });
-
-// $navTrigger.on( "click", function(event) {
-//   event.stopPropagation();
-// 	event.preventDefault();
-// 	winDim();
-// 	//console.log(winW);
-// 	//$caseNav.addClass('expanded');
-// 	// only in narrow mode
-// 	if (winW <= narrowMode){
-// 	    if($caseNav.hasClass('expanded')){
-// 	    	$caseNav.removeClass('expanded');
-// 	     }
-// 	     else{
-// 	     	$caseNav.addClass('expanded');
-// 	     }
-// 	 }	
-// });
 
 $(window).resize(function() {
   setMenu();
@@ -165,8 +118,6 @@ function ig(){
 	});
 
 
-
-
 	/**************** Event handlers for custom next / prev page links **********************/
 
 		gallery.find('a.prev').click(function(e) {
@@ -225,33 +176,9 @@ function ig(){
 	   		history.pushState('','', hash);
 	   }
 	});
-
-
-	// $(document).on("click", ".case-nav li", function(e) {
-	// 	e.preventDefault();
-	// 	var ajaxSrc = $(this).find('a').attr("href"),
-	// 	hash = "#"+ajaxSrc.split(".")[0];
-
-	//    	getContent(ajaxSrc);
-
-	//    	if (Modernizr.history) {
-	//    		history.pushState('','', hash);
-	//    }
-	//    return false;
-	// }); //  end case-nav ajax
-
-		//console.log(initialURL);
-
-	// } else {
-
-	// 	alert("ie8");
-	// }
-
 	
 	function getContent(ajaxSrc){
-
 		//console.log(window.history);
-	
 		$ajaxDest.load(ajaxSrc, function(){
 		  	ig();  // initialise gallery
 			$caseBtn.removeClass('selected');
@@ -274,17 +201,6 @@ function ig(){
 			$ajaxSrc = hash.split('#')[1]+".html"; 
 			getContent($ajaxSrc);
 		}
-		// deals with initial load
-		// else {
-		// 	getContent(link);
-		// }
-
-		// if (){
-		// 	getContent(link, title);	
-		// }
-
-
 	});
-
     /****************************************************************************************/
 });

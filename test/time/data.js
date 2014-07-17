@@ -8,30 +8,30 @@
 		"text":"<i><span class='c1'>Designer</span> & <span class='c2'>Developer</span></i>",
 		"asset":
         {
-            "media":"assets/img/notes.png",
-            "credit":"<a href='http://dribbble.com/shots/221641-iOS-Icon'>iOS Icon by Asher</a>",
-            "caption":""
+            "media":"img/notes.png",
+            "credit":"<a href='http://dribbble.com/221641-iOS-Icon'>iOS Icon by Asher</a>",
+            "caption":"Caption goes here ....."
         },
         "date": [
             {
-                "startDate":"2009,2",
+                "startDate":"2009,2,27",
                 "headline":"My first experiment in time-lapse photography",
                 "text":"Nature at its finest in this video.",
                 "asset":
                 {
                     "media":"http://vimeo.com/22439234",
-                    "credit":"",
-                    "caption":""
+                    "credit":"thanks Julia",
+                    "caption":"This is the caption."
                 }
             },
             {
-                "startDate":"2009,5",
+                "startDate":"2009,5,13",
                 "headline":"Redesign of my portfolio",
                 "text":"",
                 "asset":
                 {
-                    "media":"assets/img/shots/sidebar_s3.jpg",
-                    "credit":"<a href='http://dribbble.com/shots/401334-Sidebar'>by Chris Brauckmuller</a>",
+                    "media":"img/sidebar_s3.jpg",
+                    "credit":"<a href='http://dribbble.com/401334-Sidebar'>by Chris Brauckmuller</a>",
                     "caption":""
                 }
             },
@@ -52,19 +52,19 @@
                 "text":"",
                 "asset":
                 {
-                    "media":"assets/img/shots/shot_1298590416.jpg",
-                    "credit":"<a href='http://dribbble.com/shots/120088-Gmail-Pokki-Final-Ui'>by Justalab</a>",
+                    "media":"img/shot_1298590416.jpg",
+                    "credit":"<a href='http://dribbble.com/120088-Gmail-Pokki-Final-Ui'>by Justalab</a>",
                     "caption":""
                 }
             },
             {
                 "startDate":"2010,3",
                 "headline":"Logo Design for a pet shop",
-                "text":"",
+                "text":"It was a challenge to create both the design and code in a week.",
                 "asset":
                 {
-                    "media":"assets/img/shots/pet___you.jpg",
-                    "credit":"<a href='http://dribbble.com/shots/444003-Pet-You'>by Nikita Lebedev</a>",
+                    "media":"img/pet___you.jpg",
+                    "credit":"<a href='http://dribbble.com/444003-Pet-You'>by Nikita Lebedev</a>",
                     "caption":""
                 }
             },
@@ -74,8 +74,8 @@
                 "text":"It was a challenge to create both the design and code in a week.",
                 "asset":
                 {
-                    "media":"assets/img/shots/proto_v4_decoupe_2.jpg",
-                    "credit":"<a href='http://dribbble.com/shots/228267-Swiss-newspaper-reader-app-for-iPad-UI-UX-iOS'>by Jonathan Moreira</a>",
+                    "media":"img/proto_v4_decoupe_2.jpg",
+                    "credit":"<a href='http://dribbble.com/228267-Swiss-newspaper-reader-app-for-iPad-UI-UX-iOS'>by Jonathan Moreira</a>",
                     "caption":""
                 }
             },
@@ -85,8 +85,8 @@
                 "text":"",
                 "asset":
                 {
-                    "media":"assets/img/shots/chameleon.jpg",
-                    "credit":"<a href='http://dribbble.com/shots/366400-Chameleon'>Chameleon by Mike</a>",
+                    "media":"img/chameleon.jpg",
+                    "credit":"<a href='http://dribbble.com/366400-Chameleon'>Chameleon by Mike</a>",
                     "caption":""
                 }
             },
