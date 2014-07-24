@@ -24,12 +24,6 @@
 
 </head>
 <body class="exhibition">
-    
-    <!--[if lt IE 8]>
-        <p class="browsehappy">You are using quite an old browser and ome of the functionality of this site may not be supported. We recommend <a href="http://browsehappy.com/">upgrading your browser</a> to improve your experience. <span class="close">Close</span></p>
-    <![endif]-->
-   
-
 <header class="clearfix">
         <a href="index.html" class="button back">&lt;</a>
         <a href="index.html">
@@ -53,12 +47,12 @@
         <li><a href="palestine-and-egypt.html" title="Palestine and Egypt">Palestine and Egypt</a></li>
         <li><a href="gallipoli.html" title="Gallipoli">Gallipoli</a></li>
         <li><a href="western-front.html" title="Western Front">Western Front</a></li>
-        <li><a href="western-europe-war-map.html" title="War Map of Western Eurpoe">Map of Western Europe</a></li>
+        <li><a href="western-europe-war-map.html" title="War Map of Western Europe">Map of Western Europe</a></li>
         <li><a href="at-sea.html" title="At Sea">At Sea</a></li>
         <li><a href="rehabilitation.html" title="Rehabilitation">Rehabilitation</a></li>
         <li><a href="percival-morganti.html" title="Percival Morganti">Percival Morganti</a></li>
         <li><a href="soldiers-writing.html" title="Soldiers' Writing">Soldiers' Writing</a></li>
-        <li><a href="maori-pacific.html" title="The Pacific and the Maori">The Pacific and the M&#257;ori</a></li>
+        <li><a href="maori-pacific.html" title="The Pacific and the M&#257;ori">The Pacific and the M&#257;ori</a></li>
         <li><a href="recruitment.html" title="Recruitment">Recruitment</a></li>
         <li><a href="literature.html" title="Literature">Literature</a></li>
         <li><a href="supporting-the-war.html" title="Supporting the War">Supporting the War</a></li>
@@ -137,6 +131,19 @@
             }
         });
 
+        $(".ajax-transcript").fancybox({
+            type: 'ajax',
+            maxWidth: 900,
+            fitToView   : false,
+            width       : '85%',
+            height      : '80%',
+            autoSize    : false,
+            closeClick  : true,
+            padding: '30',
+            openEffect  : 'fade',
+            closeEffect : 'fade'
+        });
+
     });
 </script>
 
@@ -148,6 +155,8 @@
 
   ga('create', 'UA-36470764-10', 'auto');
   ga('send', 'pageview');
+
+  
 
 </script>
 </body>

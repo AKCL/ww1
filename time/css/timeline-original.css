@@ -80,7 +80,7 @@ html,body{height:100%;padding:0px;margin:0px;}
 #timeline .navigation .timenav{position:absolute;top:0px;left:-250px;z-index:1;}#timeline .navigation .timenav .content{position:relative;}#timeline .navigation .timenav .content .marker.start{display:none;}
 #timeline .navigation .timenav .content .marker.active .dot{background:#0088cc;z-index:200;}
 #timeline .navigation .timenav .content .marker.active .line{z-index:199;background:#0088cc;width:1px;}#timeline .navigation .timenav .content .marker.active .line .event-line{background:#0088cc;filter:alpha(opacity=75);-khtml-opacity:0.75;-moz-opacity:0.75;opacity:0.75;}
-#timeline .navigation .timenav .content .marker.active .flag{z-index:200;background-image:url(timeline.png);background-repeat:no-repeat;background-position:0 -110px;width:153px;height:60px;}#timeline .navigation .timenav .content .marker.active .flag .flag-content h3{color:#0088cc;}
+#timeline .navigation .timenav .content .marker.active .flag{z-index:200;background-image:url(timeline.png);background-repeat:no-repeat;background-position:0 -110px;width:50px;height:60px;}#timeline .navigation .timenav .content .marker.active .flag .flag-content h3{color:#0088cc;}
 #timeline .navigation .timenav .content .marker.active .flag.row1,#timeline .navigation .timenav .content .marker.active .flag.row2,#timeline .navigation .timenav .content .marker.active .flag.row3{z-index:200;}
 #timeline .navigation .timenav .content .marker.active:hover{cursor:default;}#timeline .navigation .timenav .content .marker.active:hover .flag .flag-content h3{color:#0088cc;}
 #timeline .navigation .timenav .content .marker.active:hover .flag .flag-content h4{color:#999999;}

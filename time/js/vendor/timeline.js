@@ -1551,11 +1551,11 @@ typeof jQuery != "undefined" && (jQuery.easing.jswing = jQuery.easing.swing, jQu
             marker_width: 150,
             marker_height: 48,
             density: 2,
-            timeline_width: 900,
+            timeline_width: 980,
             interval_width: 200,
             rows: [1, 1, 1],
-            multiplier: 6,
-            max_multiplier: 16,
+            multiplier: 3,
+            max_multiplier: 6,
             min_multiplier: 1,
             has_start_page: !1
         };
@@ -1608,7 +1608,7 @@ typeof jQuery != "undefined" && (jQuery.easing.jswing = jQuery.easing.swing, jQu
                     lineevent: o,
                     type: "marker"
                 };
-                e[d].type == "start" && (trace("BUILD MARKER HAS START PAGE"), r.has_start_page = !0, p.type = "start"), h.push(p)
+                e[d].type == "start" && (trace("BUILD MARKER HAS START PAGE"), r.has_start_page = !0, p.type = "start"), h.push(p);
             }
             for (var q = 0; q < f.length; q++) {
                 var i = "",
@@ -1766,7 +1766,7 @@ typeof jQuery != "undefined" && (jQuery.easing.jswing = jQuery.easing.swing, jQu
                 var f = !1;
                 VMM.Element.find(this, "figure img").length != 0 ? (f = !0, e.asset.media = VMM.Element.attr(VMM.Element.find(this, "figure img"), "src")) : VMM.Element.find(this, "figure a").length != 0 && (f = !0, e.asset.media = VMM.Element.attr(VMM.Element.find(this, "figure a"), "href")), f && (VMM.Element.find(this, "cite").length != 0 && (e.asset.credit = VMM.Element.html(VMM.Element.find(this, "cite"))), VMM.Element.find(this, "figcaption").length != 0 && (e.asset.caption = VMM.Element.html(VMM.Element.find(this, "figcaption")))), trace(e), b.timeline.date.push(e)
             }
-        }), VMM.fireEvent(global, "DATAREADY", b)
+        }), VMM.fireEvent(global, "DATAREADY", b);
     },
     parseJSON: function (a) {
         a.timeline.type == "default" ? (trace("DATA SOURCE: JSON STANDARD TIMELINE"), VMM.fireEvent(global, "DATAREADY", a)) : a.timeline.type == "twitter" ? (trace("DATA SOURCE: JSON TWEETS"), VMM.Timeline.DataObj.model_Tweets.buildData(a)) : (trace("DATA SOURCE: NO IDEA"), trace(type.of(a.timeline)))
@@ -1845,11 +1845,11 @@ typeof jQuery != "undefined" && (jQuery.easing.jswing = jQuery.easing.swing, jQu
         }
     },
     date_obj: {
-        startDate: "2012,2,2,11,30",
+        startDate: "",
         headline: "",
         text: "",
         asset: {
-            media: "http://youtu.be/vjVfu8-Wp6s",
+            media: "",
             credit: "",
             caption: ""
         },

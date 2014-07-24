@@ -1,0 +1,916 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"navT",
+				"navTotalHeight"
+			],
+			[
+				"e",
+				"Eph.WWI.Postcds.1917ifront.jpg	w:1301 h:1920"
+			],
+			[
+				"n",
+				"NZMS483.BelgiumPg1.jpg	w:1530 h:1920"
+			],
+			[
+				"N",
+				"NZMS531.Aug1915front.jpg	w:1920 h:1240"
+			],
+			[
+				"s",
+				"soldiers-writing/"
+			],
+			[
+				"font",
+				"font-style"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"heade",
+				"header-height"
+			],
+			[
+				"tri",
+				"triggerHeight"
+			],
+			[
+				"padd",
+				"padding-left"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"border",
+				"border-radius"
+			],
+			[
+				"padding",
+				"padding-top"
+			],
+			[
+				"cur",
+				"cursor"
+			],
+			[
+				"list-s",
+				"list-style"
+			],
+			[
+				"pr",
+				"preventDefault"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"wi",
+				"width"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "gallipoli.html",
+			"settings":
+			{
+				"buffer_size": 14038,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "soldiers-writing.html",
+			"settings":
+			{
+				"buffer_size": 20736,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "transcription-jackson-1917.html",
+			"settings":
+			{
+				"buffer_size": 1418,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/custom.js",
+			"settings":
+			{
+				"buffer_size": 225,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "source/jquery.fancybox.css",
+			"settings":
+			{
+				"buffer_size": 4947,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/exhibition.js",
+			"settings":
+			{
+				"buffer_size": 6327,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "exhibition.html",
+			"settings":
+			{
+				"buffer_size": 6796,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "css/main.less",
+			"settings":
+			{
+				"buffer_size": 26939,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "transcription-fowler-17-9-1917.html",
+			"settings":
+			{
+				"buffer_size": 15603,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "rehabilitation.html",
+			"settings":
+			{
+				"buffer_size": 8301,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 380.0,
+		"selected_items":
+		[
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"sy",
+				"Set Syntax: HTML"
+			],
+			[
+				"syn",
+				"Set Syntax: HTML"
+			],
+			[
+				"syn p",
+				"Set Syntax: Python"
+			],
+			[
+				"sy c",
+				"Set Syntax: CSS"
+			],
+			[
+				"syn x",
+				"Set Syntax: XML"
+			],
+			[
+				"syn ",
+				"Set Syntax: HTML"
+			],
+			[
+				"syn as",
+				"Set Syntax: ASP"
+			],
+			[
+				"syn t",
+				"Set Syntax: Plain Text"
+			],
+			[
+				"syntax t",
+				"Set Syntax: Plain Text"
+			],
+			[
+				"pac",
+				"Package Control: Remove Package"
+			],
+			[
+				"synj",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"SYNj",
+				"Set Syntax: JSON"
+			],
+			[
+				"syn h",
+				"Set Syntax: HTML"
+			],
+			[
+				"pa",
+				"Package Control: Enable Package"
+			],
+			[
+				"syj",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"synht",
+				"Set Syntax: HTML"
+			]
+		],
+		"width": 512.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/inetpub/wwwroot/ww1/www/transcription-mitchell-10-9-1915.html",
+		"/C/inetpub/wwwroot/ww1/www/transcription-mitchell-18-8-1915.html",
+		"/C/inetpub/wwwroot/ww1/www/timeline.html",
+		"/C/inetpub/wwwroot/ww1/www/index.html",
+		"/C/inetpub/wwwroot/ww1/www/exhibition.html",
+		"/C/inetpub/wwwroot/ww1/www/index_old.html",
+		"/C/inetpub/wwwroot/ww1/www/western-europe-war-map.html",
+		"/C/inetpub/wwwroot/ww1/www/western-front.html",
+		"/C/inetpub/wwwroot/ww1/www/rehabilitation.html",
+		"/C/inetpub/wwwroot/ww1/www/gallipoli.html",
+		"/C/inetpub/wwwroot/ww1/www/palestine-and-egypt.html",
+		"/C/inetpub/wwwroot/ww1/www/maori-pacific.html",
+		"/C/inetpub/wwwroot/ww1/www/1918.html",
+		"/C/inetpub/wwwroot/ww1/www/at-sea.html",
+		"/C/inetpub/wwwroot/ww1/www/introduction.html",
+		"/C/inetpub/wwwroot/ww1/www/literature.html",
+		"/C/inetpub/wwwroot/ww1/www/percival-morganti.html",
+		"/C/inetpub/wwwroot/ww1/www/soldiers-writing.html",
+		"/C/inetpub/wwwroot/ww1/www/recruitment.html",
+		"/C/inetpub/wwwroot/ww1/www/samoa.html",
+		"/C/inetpub/wwwroot/ww1/www/supporting-the-war.html",
+		"/C/inetpub/wwwroot/ww1/test/time/data.js",
+		"/C/inetpub/wwwroot/ww1/www/js/vendor/jush.js",
+		"/C/inetpub/wwwroot/ww1/www/source/jquery.fancybox.js",
+		"/C/inetpub/wwwroot/ww1/www/source/helpers/jquery.fancybox-buttons.css",
+		"/C/inetpub/wwwroot/ww1/www/css/main.css",
+		"/C/inetpub/wwwroot/ww1/www/css/main.less",
+		"/C/inetpub/wwwroot/ww1/www/js/exhibition.js",
+		"/C/inetpub/wwwroot/ww1/www/js/custom.js",
+		"/C/inetpub/wwwroot/ww1/www/js/test.js",
+		"/C/inetpub/wwwroot/ww1/www/js/vendor/jquery.galleriffic.js",
+		"/C/inetpub/wwwroot/ww1/www/source/jquery.fancybox.css",
+		"/C/inetpub/wwwroot/ww1/www/img/zwartevilt.png",
+		"/C/Users/DigiServ/Desktop/jplayer-demo/jplayer.demo.html",
+		"/C/inetpub/wwwroot/ww1/www/case2.html",
+		"/C/inetpub/wwwroot/ww1/www/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js",
+		"/C/inetpub/wwwroot/ww1/www/img/black_paper.png",
+		"/C/inetpub/wwwroot/ww1/www/img/aklc-png-med.png",
+		"/C/inetpub/wwwroot/ww1/www/js/backstretch.js",
+		"/C/Users/DigiServ/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/DigiServ/Desktop/comicsnz.css",
+		"/C/inetpub/wwwroot/ww1/www/exhibition/index.html",
+		"/C/inetpub/wwwroot/ww1/www/img/itllbeoverbyxmas.png",
+		"/C/inetpub/wwwroot/ww1/www/exhibition/case1.html",
+		"/C/inetpub/wwwroot/ww1/www/exhibition/.htaccess",
+		"/C/inetpub/wwwroot/ww1/www/exhibition/web.config",
+		"/C/inetpub/wwwroot/ww1/www/exhibition/index-test.html",
+		"/C/inetpub/wwwroot/ww1/www/web.config",
+		"/C/inetpub/wwwroot/article.html",
+		"/C/inetpub/wwwroot/ww1/test/time/assets/js/timeline-min.js",
+		"/C/inetpub/wwwroot/ww1/test/time/assets/js/script.js",
+		"/C/Users/DigiServ/Documents/online-specialist/fonts/bliss/font-kit/acbliss-medium-demo.html",
+		"/C/Users/DigiServ/Downloads/time/data.json",
+		"/C/inetpub/wwwroot/ww1/www/js/exhibition..js",
+		"/C/inetpub/wwwroot/ww1/www/js/timeline.js",
+		"/C/inetpub/wwwroot/ww1/www/exhibition/case5.html",
+		"/C/inetpub/wwwroot/ww1/www/exhibition/case4.html",
+		"/C/inetpub/wwwroot/ww1/www/exhibition/case12.html",
+		"/C/inetpub/wwwroot/ww1/www/exhibition/case6.html",
+		"/C/inetpub/wwwroot/ww1/www/exhibition/case7.html",
+		"/C/inetpub/wwwroot/ww1/www/exhibition/case8.html",
+		"/C/inetpub/wwwroot/ww1/www/exhibition/case9.html",
+		"/C/inetpub/wwwroot/ww1/www/exhibition/case11.html",
+		"/C/inetpub/wwwroot/ww1/www/exhibition/case10.html",
+		"/C/Users/DigiServ/Downloads/fancyapps-fancyBox-18d1712/demo/index.html",
+		"/C/inetpub/wwwroot/ww1/www/case1.html",
+		"/C/inetpub/wwwroot/ww1/www/case3.html",
+		"/C/inetpub/wwwroot/ww1/www/timeline/events.js",
+		"/C/Users/DigiServ/Desktop/galleriffic-2.0/example-3.html",
+		"/C/inetpub/wwwroot/ww1/www/css/galleriffic-3.css",
+		"/C/Users/DigiServ/AppData/Roaming/Sublime Text 3/Packages/List LESS Variables/lessvariables.sublime-settings",
+		"/C/Users/DigiServ/AppData/Roaming/Sublime Text 3/Packages/User/lessvariables.sublime-settings",
+		"/C/inetpub/wwwroot/ww1/www/css/basic.css",
+		"/C/Users/DigiServ/AppData/Roaming/Sublime Text 3/Packages/User/less2css.sublime-settings",
+		"/C/Users/DigiServ/AppData/Roaming/Sublime Text 3/Packages/Less2Css/less2css.sublime-settings",
+		"/C/Users/DigiServ/AppData/Roaming/Sublime Text 3/Packages/smart_less_build/smart_less_build.sublime-settings",
+		"/C/Users/DigiServ/AppData/Roaming/Sublime Text 3/Packages/smart_less_build/README.md",
+		"/C/Users/DigiServ/AppData/Roaming/Sublime Text 3/Packages/User/smart_less_build.sublime-settings",
+		"/C/inetpub/wwwroot/ww1/www/css/black.css",
+		"/C/inetpub/wwwroot/ww1/www/example-3.html",
+		"/C/inetpub/wwwroot/ww1/www/example-5.html",
+		"/C/inetpub/wwwroot/ww1/www/js/vendor/jquery-migrate-1.2.1.min.js",
+		"/C/Users/DigiServ/AppData/Roaming/Sublime Text 3/Packages/User/Package Control.sublime-settings",
+		"/C/Users/DigiServ/AppData/Roaming/Sublime Text 3/Packages/LESS/LESS.sublime-settings",
+		"/C/inetpub/wwwroot/ww1/www/js/vendor/jquery.history.js",
+		"/C/Users/DigiServ/Downloads/starter-kit-1.5.1/index.html",
+		"/C/inetpub/wwwroot/ww1/.gitattributes",
+		"/C/inetpub/wwwroot/ww1/.gitignore",
+		"/C/Users/DigiServ/AppData/Roaming/Sublime Text 3/Packages/Cheat Sheets/cheat-sheets/Sublime Text.cheatsheet",
+		"/C/Users/DigiServ/Desktop/ww1/www/timeline/events.js",
+		"/C/Users/DigiServ/Desktop/ww1/www/about.html",
+		"/C/Users/DigiServ/Desktop/ww1/www/exhibition.html",
+		"/C/Users/DigiServ/Desktop/ww1/www/index.html",
+		"/C/Users/DigiServ/Desktop/ww1/www/css/main.less",
+		"/C/Users/DigiServ/Desktop/ww1/www/js/custom.js",
+		"/C/Users/DigiServ/Desktop/ww1/www/timeline.html",
+		"/C/Users/DigiServ/Desktop/ww1/www/css/main.css",
+		"/C/Users/DigiServ/Desktop/ww1/www/timeline/events.json",
+		"/C/Users/DigiServ/AppData/Roaming/Sublime Text 3/Packages/Default/Default (Windows).sublime-keymap",
+		"/C/Users/DigiServ/Desktop/ww1/www/js/less.1.7.js",
+		"/C/Users/DigiServ/Desktop/ww1/www/img/librarieslogo.jpg",
+		"/C/Users/DigiServ/Desktop/ww1/www/javascripts/backstretch.js",
+		"/C/Users/DigiServ/Desktop/ww1/www/javascripts/custom.js",
+		"/C/Users/DigiServ/Desktop/ww1/www/javascripts/app.js",
+		"/C/Users/DigiServ/Desktop/tumblr1.3.html",
+		"/C/Users/DigiServ/Desktop/tumblr1.2.html",
+		"/C/Users/DigiServ/AppData/Roaming/Sublime Text 3/Packages/Cheat Sheets/cheat-sheets/Go.cheatsheet"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"o",
+			"height",
+			"jutland",
+			"time-interval-major",
+			"h2",
+			"font",
+			"galipoli",
+			"border-left: 1px solid #111;",
+			" solid #3e3e3e",
+			"border-right",
+			"inner",
+			"$caseNav",
+			"“",
+			"\"/e",
+			"”",
+			"“",
+			"Unexplosed",
+			"& ",
+			"”",
+			"/e",
+			"-thumb\"",
+			"/ex",
+			"@color-body-alt",
+			"pinterest",
+			"Case 2",
+			"case2",
+			"src=\"/",
+			"href=\"/",
+			"50",
+			"FontS",
+			"h1",
+			".F",
+			"@color-trans-blk",
+			"@bg-dk1",
+			"@white",
+			"aklib",
+			"@akcl-ltblue",
+			"@white-grey",
+			"@lt-grey",
+			"@mid-grey",
+			"@dk-grey",
+			"@blk-gre",
+			"@trans-blk:",
+			"@bg-dk1",
+			".@bg-dk1",
+			"@bg-dk1",
+			"@bgimg-felt-black",
+			"bg",
+			"h2",
+			"h4",
+			">>",
+			"h2",
+			"img-desc",
+			"h2",
+			"foo",
+			"header",
+			"@font-body-color",
+			"wrapper",
+			"article",
+			";",
+			"}",
+			"{",
+			"}",
+			"{",
+			"wrapper",
+			"main-container",
+			"text",
+			"main-container",
+			"wrapper",
+			".MAIN",
+			"blue",
+			"<div class=\"download\">",
+			"photo-index",
+			"case-photo",
+			"<div class=\"download\">\n                <a href=\"http://farm3.static.flickr.com/2342/2083508720_fa906f685e_b.jpg\">View Enlargement</a>\n            </div>",
+			">View",
+			"h2v",
+			"<h2v>",
+			"<div class=\"image-title\">",
+			"div",
+			"image-title",
+			"title",
+			".case-nav",
+			"cursor",
+			".NavContainer",
+			"@nav-width",
+			"'f",
+			"fonts",
+			"@gal-height",
+			"h2",
+			"targetheight",
+			"srcwidth",
+			"srcheight",
+			"targetwidth",
+			"../",
+			"../source",
+			"../css",
+			"slideshow",
+			"imageContainerSel",
+			"$imageContainer",
+			"();\n",
+			"prev",
+			"h",
+			"med-button",
+			"button",
+			"back",
+			"120px",
+			"100px",
+			"100",
+			"small",
+			"json",
+			"'acbliss",
+			".header-container",
+			"@hover-grey",
+			"$caseNav",
+			"css/",
+			"js/",
+			"source/",
+			"download",
+			"view enlargement",
+			"../",
+			".thumbs",
+			".thumbs ul",
+			".thumbs",
+			"ajaxTarget",
+			"$thumbs",
+			"allImages",
+			"hash"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": true,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 6,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "gallipoli.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 14038,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4864,
+								4864
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 969.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "soldiers-writing.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 20736,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								352,
+								352
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "transcription-jackson-1917.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1418,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1011,
+								1011
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "js/custom.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 225,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								219,
+								219
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "source/jquery.fancybox.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4947,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4339,
+								4339
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 4420.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "js/exhibition.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6327,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6221,
+								6147
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 3603.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "exhibition.html",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 6796,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6765,
+								6765
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2223.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "css/main.less",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 26939,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5003,
+								5003
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4205.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "transcription-fowler-17-9-1917.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 15603,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6,
+								49
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "rehabilitation.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8301,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5930,
+								5930
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1197.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "over-by-xmas.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+		],
+		"width": 392.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 342.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

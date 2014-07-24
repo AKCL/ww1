@@ -257,6 +257,10 @@
 	background: rgba(0, 0, 0, .8);
 }
 
+.fancybox-wrap pre{
+	padding: 2em 3em 4em 4em;
+}
+
 /*Retina graphics!*/
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
 	   only screen and (min--moz-device-pixel-ratio: 1.5),

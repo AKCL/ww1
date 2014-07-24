@@ -165,12 +165,19 @@ function ig(){
 
 		e.preventDefault();
 		var ajaxSrc = $(this).find('a').attr("href"),
+		title = $(this).find('a').attr("title"),
 		hash = "#"+ajaxSrc.split(".")[0];
 
 		$('.slideshow').empty(); // unload the slideshow
 		$('.image-caption').remove(); // unload the slideshow
 		$ajaxDest.empty(); // unload the container
 	   	getContent(ajaxSrc);
+
+	   	// ajax analytics tracking
+	   	ga('send', 'pageview', {
+		  'page': '/'+ajaxSrc,
+		  'title': title
+		});
 
 	   	if (Modernizr.history) {
 	   		history.pushState('','', hash);
@@ -202,5 +209,18 @@ function ig(){
 			getContent($ajaxSrc);
 		}
 	});
+
+	$('.ajax-transcript').click(function(){
+		var ajaxSrc = $(this).attr("href"),
+		title = $(this).attr("title");
+
+		ga('send', 'pageview', {
+		  'page': '/'+ajaxSrc,
+		  'title': title
+		});
+
+	})
+
+
     /****************************************************************************************/
 });
